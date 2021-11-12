@@ -425,19 +425,7 @@ h4.modal-title {
   color: var(--THEME_COLOR_MODULE_ONE_STRONG) !important;
 }
 
-/* VOLTAR*/
-.drag-off,
-img,
-button,
-div {
-  /* -moz-user-select: -moz-none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none; */
-}
+
 
 .btn.active.focus,
 .btn.active:focus,
@@ -484,66 +472,13 @@ div {
   }
 }
 
-.floating-menu {
-  position: fixed;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: space-around;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  left: 0;
-  width: 90px;
-  height: 300px;
-  background-color: var(--FF_ONE);
-  z-index: 1000;
-  padding: 10px;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+
+
+
+.banner-green {
+  background: #a0c33a;
 }
 
-.custom-button {
-  /* background-color: white; */
-  display: flex;
-  align-items: center;
-align-content: center;
-
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 3px solid black;
-  cursor: pointer;
-  font-size: 22px;
-}
-
-.menu-home {
-  width: 40px;
-  height: 40px;
-  background: url(../../assets/images/identity/icon/home.png);
-  background-size: cover;
-  cursor: pointer;
-
-}
-
-.menu-u1, .menu-u2, .menu-u3, .menu-u4 {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-.menu-u1 {
-  background: url(../../assets/images/identity/icon/numero-1.png);
-  background-size: cover;
-}
-.menu-u2 {
-  background: url(../../assets/images/identity/icon/numero-2.png);
-  background-size: cover;
-}
-.menu-u3 {
-  background: url(../../assets/images/identity/icon/numero-3.png);
-  background-size: cover;
-}
-.menu-u4 {
-  background: url(../../assets/images/identity/icon/numero-4.png);
-  background-size: cover;
+section {
+  margin: 0 !important;
 }
