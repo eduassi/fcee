@@ -34,7 +34,7 @@
 .modulo_1 h4.unit-title {
   margin-top: 1.5rem;
   margin-bottom: 0;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-style: italic;
   font-size: 1.3rem;
@@ -167,7 +167,7 @@ span.answer {
 
 .spotlight {
   color: var(--THEME_COLOR_MODULE_ONE_STRONG) !important;
-  font-family: roboto-b, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pa-vertical-center {
@@ -380,7 +380,7 @@ h4.modal-title {
   color: white !important;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Merriweather" !important;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: normal;
 }
 
@@ -444,7 +444,7 @@ h4.modal-title {
   width: 260px;
   height: 60px;
   color: var(--THEME_COLOR_MODULE_ONE_STRONG);
-  font-family: "Roboto Slab", serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: left;
   margin-left: 10px;
   margin-top: 10px;
@@ -560,11 +560,11 @@ div {
   left: 0;
   width: 90px;
   height: 430px;
-  background: rgb(217, 0, 89);
+  background: #961b20;
   background: linear-gradient(
     180deg,
-    rgba(217, 0, 89, 1) 0%,
-    rgba(230, 43, 134, 1) 100%
+    #961b20 0%,
+    #e81f27 100%
   );
   z-index: 1000;
   padding: 10px;
@@ -591,8 +591,8 @@ div {
   height: 100vh;
   background: linear-gradient(
     180deg,
-    rgba(217, 0, 89, 1) 0%,
-    rgba(230, 43, 134, 1) 100%
+    #961b20 0%,
+    #e81f27 100%
   );
   z-index: -1;
 }
@@ -848,19 +848,18 @@ div {
 
 .cover-box-logo {
   display: flex;
-  align-items: center;
-  align-content: center;
   position: absolute;
   width: 320px;
   height: 220px;
-  left: 0px;
-  top: 0;
-  bottom: 0;
+  left: 30px;
+  top: 80px;
+  bottom: unset;
   margin: auto;
   z-index: 2;
-  background: white;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 90px;
+  background: unset;
+  border-top-right-radius: unset;
+  border-bottom-right-radius: unset;
+  align-items: flex-start;
 }
 .cover-box-logo img {
   max-width: 230px;
@@ -876,7 +875,7 @@ div {
   line-height: 2.0rem;
   color: white;
   text-align: right;
-  font-family: "Marta";
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -892,13 +891,13 @@ div {
   line-height: 2.0rem;
   color: white;
   text-align: right;
-  font-family: "Marta";
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 .cover-title span, .cover-title-uni span {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-weight: 300;
   text-transform: none;
@@ -924,7 +923,7 @@ div {
 .rec-config ul,
 .rec-config ol,
 .rec-config span {
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-weight: 300;
 }
@@ -944,7 +943,7 @@ div {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-synthesis: none;
 }
@@ -959,7 +958,7 @@ div {
     rgba(225, 57, 201, 1) 100%
   );
   color: white;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .rec-destaque p,
@@ -967,7 +966,7 @@ div {
 .rec-destaque ol,
 .rec-destaque span {
   color: white;
-  font-family: "Merriweather sans";
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-style: italic;
   margin-top: 15px;
@@ -1004,7 +1003,7 @@ div {
 p.fonte {
   text-align: center;
   color: var(--FF_FONT_H);
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -1048,7 +1047,7 @@ p.fonte {
 .podcast ol,
 .podcast span {
   color: var(--FF_ONE);
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   margin-bottom: 0;
 }

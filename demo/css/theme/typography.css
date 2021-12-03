@@ -118,7 +118,7 @@ p,
 ul,
 ol {
     
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
 
@@ -127,14 +127,14 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 figcaption {
     font-size: 0.8em;
     text-align: center;
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .modulo_1 p,
