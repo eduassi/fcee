@@ -1,3 +1,15 @@
+.marcas {
+  width: 600px;
+  height: 108px;
+}
+
+.cover-img {
+  position: absolute;
+  top: -140px;
+  right: -140px;
+  width: 500px;
+  height: 516px;
+}
 /* custom */
 
 .pmd-z-depth {
@@ -34,7 +46,7 @@
 .modulo_1 h4.unit-title {
   margin-top: 1.5rem;
   margin-bottom: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: 300;
   font-style: italic;
   font-size: 1.3rem;
@@ -167,7 +179,7 @@ span.answer {
 
 .spotlight {
   color: var(--THEME_COLOR_MODULE_ONE_STRONG) !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .pa-vertical-center {
@@ -197,12 +209,12 @@ span.answer {
 
 body {
   overflow-y: auto;
-  margin-top: 50px;
-  background: url(../../assets/images/identity/amparo_background.png) top right;
-  /* background-size: cover; */
+  background: url(../../assets/images/identity/bg-body.png) top center;
   background-repeat: no-repeat;
-  /* background-position-x: 100%;
-  background-position-y: 0; */
+  background-position-x: center;
+  background-position-y: 0;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .caixa-destaque {
@@ -444,7 +456,7 @@ h4.modal-title {
   width: 260px;
   height: 60px;
   color: var(--THEME_COLOR_MODULE_ONE_STRONG);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   text-align: left;
   margin-left: 10px;
   margin-top: 10px;
@@ -673,6 +685,15 @@ div {
 }
 
 
+.cover h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0;
+}
+.cover h4 {
+  font-size: 2.1rem;
+  margin-top: 0;
+}
+
 
 .menu-u1,
 .menu-u2,
@@ -682,7 +703,7 @@ div {
 .menu-home,
 .menu-u0,
 .menu-referencias {
-  width: 45px;
+  width: 36px;
   height: 40px;
   cursor: pointer;
 }
@@ -868,7 +889,7 @@ div {
   line-height: 2.0rem;
   color: white;
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -884,13 +905,13 @@ div {
   line-height: 2.0rem;
   color: white;
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 .cover-title span, .cover-title-uni span {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-style: italic;
   font-weight: 300;
   text-transform: none;
@@ -916,7 +937,7 @@ div {
 .rec-config ul,
 .rec-config ol,
 .rec-config span {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-style: italic;
   font-weight: 300;
 }
@@ -936,7 +957,7 @@ div {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-style: italic;
   font-synthesis: none;
 }
@@ -951,7 +972,7 @@ div {
     rgba(225, 57, 201, 1) 100%
   );
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .rec-destaque p,
@@ -959,7 +980,7 @@ div {
 .rec-destaque ol,
 .rec-destaque span {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: 400;
   font-style: italic;
   margin-top: 15px;
@@ -996,7 +1017,7 @@ div {
 p.fonte {
   text-align: center;
   color: var(--FF_FONT_H);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: 400;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -1040,7 +1061,7 @@ p.fonte {
 .podcast ol,
 .podcast span {
   color: var(--FF_ONE);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-style: italic;
   margin-bottom: 0;
 }
