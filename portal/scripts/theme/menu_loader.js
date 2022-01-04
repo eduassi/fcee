@@ -9,6 +9,7 @@ var page_name;
 var menu_items;
 var current_active_item;
 var current_active_ball_item;
+var MENU_JSON;
 
 var set_active_item = function () {
   $(current_active_item).removeClass("active");
@@ -41,6 +42,7 @@ var menu_page_loader = function (next_page) {
 
 $(document).ready(function () {
   $.getJSON("scripts/user/menu.json", function (json) {
+    MENU_JSON = json;
     let information = json["information"];
     let configuration = json["configuration"];
     let menu_custom = configuration["custom-menu"];
@@ -83,13 +85,28 @@ $(document).ready(function () {
         let new_button_template = $.parseHTML(
           pages[i]["custom-button"]["html"]
         );
+
         if (menu_custom_config["auto-id"]) {
           let new_id = menu_custom_config["id-prefix"]
             ? menu_custom_config["id-prefix"] + i
             : "mb-" + i;
           $(new_button_template).attr("id", new_id);
+        }
+        if ("external-url" in pages[i]) {
+          $(new_button_template).addClass("external-url");
+        } else {
+          $(new_button_template).addClass("linker");
+          $(new_button_template).attr("linker", pages[i]["url"]);
+        }
+
+        if ("external-url-self" in pages[i]) {
+          // $(new_button_template).addClass("external-url-self");
+          console.log("external-url");
+        } else {
           $(new_button_template).addClass("linker");
         }
+
+        $(new_button_template).attr("index", i);
         $(target_selector).append(new_button_template);
       } else {
         let new_li_item = $.parseHTML(menu_item_template)[0];
@@ -109,11 +126,24 @@ $(document).ready(function () {
 
     // GIVE LISTENER
     $.each($(".linker"), function (index, element) {
-      let this_level = Number(index + min_level); // ADJUST OFFSET
+      let index_number = Number($(element).attr("index"));
+      let this_level = Number(index_number + min_level); // ADJUST OFFSET
       let new_url = pages[this_level]["url"];
-      $(element).on("click", function () {
+      $(element).on("click", function () {  
         current_level = this_level;
-        menu_page_loader(new_url);
+        // menu_page_loader(new_url);
+        $(".menu-footer")
+          .find(".text-item[page-index = " + (current_level) + "]")
+          .click();
+      });
+    });
+
+    $.each($(".external-url"), function (index, element) {
+      let index_number = Number($(element).attr("index"));
+      let this_level = Number(index_number + min_level);
+      let external_url = pages[this_level]["external-url"];
+      $(element).on("click", function () {
+        window.open(external_url, "_blank");
       });
     });
 
@@ -131,6 +161,19 @@ $(document).ready(function () {
     $(current_active_item).addClass("active");
 
     // CARREGAR A PÁGINA
+    let exploded_url;
+    let my_url;
+    let param_number;
+
+    exploded_url = window.location.href.split("#");
+    my_url = exploded_url[0];
+    param_number = exploded_url[1];
+
+    if (!isNaN(param_number) && param_number <= max_level) {
+      current_level = Number(param_number);
+    }
+
+    history.pushState({}, null, my_url);
     menu_page_loader(page_name + current_level + ".html");
 
     // TÍTULOS DO MÓDULO

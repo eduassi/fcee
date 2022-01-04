@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -11,13 +12,16 @@
     <link href="css/bootstrap/stylish-portfolio.min.css" rel="stylesheet" />
     <link href="css/dragndrop/dragndrop.css" rel="stylesheet" />
     <link href="css/aos/aos.css" rel="stylesheet" />
+    <link
+      href="lib/green_audio_player/css/green-audio-player.min.css"
+      rel="stylesheet"
+    />
     <link href="css/theme/theme_color_setup.css" rel="stylesheet" />
     <link href="css/theme/theme_style.css" rel="stylesheet" />
     <link href="css/theme/objects_style.css" rel="stylesheet" />
     <link href="css/user/user_color_setup.css" rel="stylesheet" />
     <link href="css/user/user_objects_style.css" rel="stylesheet" />
     <link href="css/user/user_style.css" rel="stylesheet" />
-    <link href="css/user/projeto_familias_fortes.css" rel="stylesheet" />
     <link
       href="assets/fontawesome/css/all.min.css"
       rel="stylesheet"
@@ -105,114 +109,309 @@
 
     <script src="lib/lottie/lottie.js"></script>
 
-    <title>FCEE - Cursos</title>
+    <title>AMPARO</title>
   </head>
 
   <body id="module-wrapper" class="modulo_1">
-    <section id="pmd-main">
-      <!-- Sidebar -->
-      <aside
-        id="basicSidebar"
-        class="pmd-sidebar pmd-z-depth pmd-sidebar-left-fixed bg-light"
-        role="navigation"
-      >
-        <nav id="sidebar" class="nav flex-column pmd-sidebar-nav">
-          <a
-            href="javascript:void(0);"
-            data-target="basicSidebar"
-            data-placement="left"
-            class="pmd-ripple-effect pmd-sidebar-toggle"
-          >
-            <div class="sidebar-header d-flex justify-content-between">
-              <span class="sidebar-titulo-modulos">Inscrições</span>
-              <span class="fechar-hamburguer my-auto"
-                ><i class="fas fa-times"> </i
-              ></span>
-            </div>
-          </a>
+    <div class="menu-text-mobile hide">
+      <ul class="menu-text">
+        <li class="text-center"><a href="#apresentacao">Apresentação</a></li>
+        <li class="text-center"><a href="#estrutura">Estrutura do curso</a></li>
+        <li class="text-center"><a href="#funcionamento">Funcionamento</a></li>
+        <li class="text-center"><a href="#certificado">Certificado</a></li>
+        <li class="text-center"><a href="#contato">Contato</a></li>
+        <li class="inscricao"><a href="#inscricao">Inscrição</a></li>
+      </ul>
+    </div>
 
-          <span class="sumario-titulo">SUMÁRIO</span>
-
-          <!-- <ul id="menu_item_list"> -->
-          <!-- MENU GERADO PELO "./scripts/user/menu.json" -->
-          <!-- </ul> -->
-
-          <div class="divider"></div>
-
-          <ul class="components-2">
-            <li>
-              <a
-                href="assets/files/familias_fortes_modulo_01_.pdf"
-                target="_blank"
-                >Módulo em PDF</a
-              >
-            </li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <ul class="components-3">
-            <li>
-              <a href="expediente/index.html" target="_blank">Expediente</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <!-- Overlay -->
-      <div class="pmd-sidebar-overlay"></div>
-
-      <!-- <aside class="floating-menu" id="menu_item_list"></aside> -->
-
-<!-- ITENS DO MENU JS -->
-<!-- ,
-    {
-      "placeholder": "Tópico 5",
-      "url": "pages/capitulo_5.html",
-      "custom-button": {
-        "html": "<div class='btn bt-primary custom-button unselectable'></div>"
-      }
-    } -->
-
-
-
-      <!-- Conteúdo -->
-      <div id="content-viewer"></div>
-      <div id="preloader-container">
-        <div id="preloader-viewer"></div>
+    <!-- BANNER TOP -->
+    <div class="main-menu">
+      <div class="logo"></div>
+      <div class="menu-text-large">
+        <ul class="menu-text">
+          <li><a href="#apresentacao">Apresentação</a></li>
+          <li><a href="#estrutura">Estrutura do curso</a></li>
+          <li><a href="#funcionamento">Funcionamento</a></li>
+          <li><a href="#certificado">Certificado</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li class="inscricao"><a href="#inscricao">Inscrição</a></li>
+        </ul>
       </div>
 
-      <!-- SETA DE NAVEGAÇÃO -->
-      <!-- <div class="container">
+      <div class="hamburguer-button unselectable" id="hide-show-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- Conteúdo -->
+
+    <!-- CAPA -->
+    <section class="flex-section">
+      <div class="container bg-gray bg-main">
         <div class="row">
-          <div class="col-md-11">
-            <div class="next-mod-button" id="content-next-mod-bt">
-              <img src="assets/images/design/nav/arrow-right.svg" />
+          <di class="col-lg-4">
+            <div
+              class="
+                cover-box-logo
+                d-none d-lg-block
+                default-shadow
+                unselectable
+              "
+            >
+              <img
+                class="d-none d-lg-block img-fluid mx-auto unselectable"
+                src="assets/images/identity/amparo_logo.svg"
+              />
+            </div>
+          </di>
+          <div class="col-lg-8 plr">
+            <img
+              class="d-block d-lg-none img-fluid mx-auto unselectable brand"
+              src="assets/images/identity/amparo_logo_mob.svg"
+            />
+            <p class="" id="apresentacao">
+              O curso <b>Amparo</b> —
+              <b
+                >Aprendendo sobre a dependência química em mulheres acolhidas e
+                reclusas</b
+              >: <b>oportunidades de cuidado e atenção</b> é promovido pela
+              Secretaria Nacional de Políticas para Mulheres, do Ministério da
+              Mulher, da Família e dos Direitos Humanos (SNPM/MMFDH) e
+              desenvolvido pela Secretaria de Educação a Distância da
+              Universidade Federal de Santa Catarina (SEAD-UFSC).
+            </p>
+            <p class="mb-0">
+              Este curso apresenta e discute como objeto central a dependência
+              química em mulheres nos contextos de acolhimento social e
+              encarceramento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section>
+      <div class="container bg-gray">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <p>
+              Aborda temas relacionados a: consumo de substâncias psicoativas e dependência química no Brasil e no mundo; diferenças entre sexo no uso, abuso e dependência de substâncias psicoativas; impacto e vulnerabilidade social e dependência química; tratamento e recuperação; e contexto do encarceramento feminino.
+            </p>
+            <p>
+              O objetivo do curso é viabilizar uma aprendizagem de qualidade e
+              gratuita a diversos profissionais atuantes no contexto de
+              Comunidades Terapêuticas e Instituições Carcerárias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container bg-gray">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <div class="rec-config default-shadow">
+              <div class="icon-comp icon-1 mb-3">
+                <img class="mb-1 mb-md-2" src="assets/images/identity/icon-1.svg" />
+                Curso 100% on-line<br />e gratuito
+              </div>
+              <div class="icon-comp icon-2 mb-3">
+                <img class="mb-1 mb-md-2" src="assets/images/identity/icon-2.svg" />
+                Duração: um mês<br />e vinte dias
+              </div>
+              <div class="icon-comp icon-3 mb-3">
+                <img class="mb-1 mb-md-2" src="assets/images/identity/icon-3.svg" />
+                Carga horária<br />28 horas
+              </div>
             </div>
           </div>
         </div>
-      </div> -->
-
+      </div>
     </section>
+
+    <section>
+      <div class="container bg-gray">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <div class="row">
+              <div class="col-lg-4">
+                <h2 id="estrutura">Estrutura do curso</h2>
+                <p>
+                  Nesta proposta metodológica, o cursista é o principal agente
+                  do seu processo de aprendizagem. Tem à sua disposição, no
+                  Ambiente Virtual de Ensino e Aprendizagem (AVEA), o material
+                  didático e as avaliações.
+                </p>
+                <p>
+                  No que se refere à organização, o curso conta com uma trilha
+                  de aprendizagem composta por módulos de conteúdos que
+                  totalizam 28 horas de capacitação (08/03/22 a 26/04/22),
+                  conforme o programa apresentado a seguir:
+                </p>
+              </div>
+              <div class="col-lg-8">
+                <img class="mt-lg-4" src="assets/images/identity/table.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container bg-gray">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <h2 id="funcionamento">Funcionamento</h2>
+            <p>
+              O curso é totalmente ofertado a distância, por meio de um Ambiente
+              Virtual de Ensino e Aprendizagem (AVEA), espaço em que se
+              desenvolve todo o estudo. É responsabilidade do cursista acessar o
+              Ambiente para estudar e realizar as avaliações obrigatórias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container bg-gray">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <div class="rec-config-2 default-shadow">
+              <h2 id="inscricao">Inscrição</h2>
+              <p>
+                As inscrições serão realizadas entre os dias
+                <b>05/01/2022 e 28/02/2022</b>, ou enquanto houver vagas
+                disponíveis.
+              </p>
+              <h3>Importante:</h3>
+              <p>
+                <b
+                  >Serão priorizadas as inscrições de profissionais atuantes no
+                  contexto de Comunidades Terapêuticas e Instituições
+                  Carcerárias. Para ter prioridade, os profissionais devem
+                  anexar comprovante de vínculo ocupacional com os órgãos
+                  estaduais e/ou municipais.</b
+                >
+              </p>
+              <p>
+                Se houver disponibilidade de vagas, serão aceitas inscrições de
+                público atuante na área.
+              </p>
+              <p>
+                <b>Acesse o tutorial</b> com o passo a passo para a realização da sua inscrição, <b>clicando na figura abaixo</b>:
+              </p>
+              <a target="_blank" href="assets/files/Amparo_Tutorial_de_inscircao.pdf"><img
+                class="mt-lg-4 inscricao-img d-block mx-auto"
+                src="assets/images/identity/inscricao.svg"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container bg-gray-last">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <div class="row">
+              <div class="col-6 mx-auto">
+                <h2 id="certificado">Certificado</h2>
+                <p>
+                  Os cursistas que completarem todas as avaliações obrigatórias
+                  propostas, e que obtiverem o desempenho exigido para a sua
+                  conclusão, receberão ao final do curso um certificado de
+                  extensão universitária, emitido pela Universidade Federal de
+                  Santa Catarina (UFSC), com validade em todo o território
+                  nacional.
+                </p>
+                <p>
+                  Esse certificado é eletrônico e possui uma assinatura digital
+                  com uma chave de validação que garante sua autenticidade e
+                  permite a impressão do documento pelo próprio cursista a
+                  partir do acesso à web.
+                </p>
+              </div>
+              <div class="col-6 mx-auto">
+                <h2 id="contato">Contato</h2>
+                <p>Acesse nosso canal de atendimento:</p>
+                <p>
+                  E-mail:
+                  <a
+                    class="text-break"
+                    target="_blank"
+                    href="mailto:amparosnpm.sead@contato.ufsc.br"
+                    >amparosnpm.sead@contato.ufsc.br</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bg-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-11 mx-auto">
+            <div class="brand-bar">
+              <img class="logos" src="assets/logo-web.svg">
+              <img class="logo-mob img-fluid" src="assets/logo-mobile.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section style="height: 1px"></section>
+
+    <!-- <div id="preloader-container">
+      <div id="preloader-viewer"></div>
+    </div> -->
 
     <script src="lib/jquery/jquery-3.4.1.min.js"></script>
     <script src="lib/bootstrap/popper.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
     <script src="lib/bootstrap/bootstrap_starter.js"></script>
     <script src="lib/jquery/jquery.easing.min.js"></script>
-    <script src="lib/lodash/lodash.js"></script>
-    <script src="lib/dragndrop/dragndrop.js"></script>
-    <script src="lib/aos/aos.js"></script>
-    <script src="lib/propeller/propeller.min.js"></script>
+    <!-- <script src="lib/lodash/lodash.js"></script> -->
+    <!-- <script src="lib/dragndrop/dragndrop.js"></script> -->
+    <!-- <script src="lib/aos/aos.js"></script> -->
+    <!-- <script src="lib/propeller/propeller.min.js"></script> -->
 
+    <!-- <script src="lib/green_audio_player/js/green-audio-player.min.js"></script> -->
     <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
 
     <!-- Theme scripts -->
-    <script src="scripts/theme/objects_loader.js"></script>
+    <!-- <script src="scripts/theme/objects_loader.js"></script>
     <script src="scripts/theme/theme_starter.js"></script>
-    <script src="scripts/theme/menu_loader.js"></script>
+    <script src="scripts/theme/menu_loader.js"></script> -->
 
     <!-- Atividade autoavaliativa -->
     <script src="scripts/user/animation.js"></script>
+
+    <script src="scripts/user/custom.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".hamburguer-button").click(function () {
+          $(".menu-text-mobile").toggleClass("hide");
+        });
+        $(".menu-text-mobile ul li").click(function () {
+          $(".menu-text-mobile").toggleClass("hide");
+        });
+      });
+    </script>
   </body>
 </html>
