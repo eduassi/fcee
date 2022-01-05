@@ -118,8 +118,8 @@ p,
 ul,
 ol {
     
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
 }
 
 h1,
@@ -127,7 +127,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 
@@ -141,9 +141,9 @@ figcaption {
 .modulo_1 ul,
 .modulo_1 ol{
     color: var(--THEME_FONT_COLOR);
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.95rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .modulo_1 h1,

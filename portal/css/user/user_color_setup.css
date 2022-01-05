@@ -1,24 +1,21 @@
 :root {
 
   /* AMPARO */
-  --FF_ONE:         #665fe1;  
-  --FF_TWO:         #ad4ef1;
-  --FF_THREE:       #e239ca;
-  --FF_FOUR:        #ea2e88; 
-  --FF_FONT_H:      #ff1a9d; 
+  --FF_ONE:         #f3ecaa;  
+  --FF_TWO:         #bbbe33;
+  --FF_THREE:       #cb4f4c;
+  --FF_FOUR:        #f9f3b7;
+  --FF_FIVE:        #fffcdb; 
+  --FF_SIX:        #fdd9c0; 
+  --FF_FONT_H:      #fff; 
   --COLOR_BG_GRAY:  #efeffb;
   --COLOR_BG_GRAY-2:  #e4e4e7;
-  --FF_FOUR_60_PERCENT:        #ea2e8899;
+  --FF_FOUR_60_PERCENT:        #ffffff60;
 
-  --COLOR-MODULE-1: #e72f86;
-  --COLOR-MODULE-2: #ff1a9a;
-  --COLOR-MODULE-3: #df39c7;
-  --COLOR-MODULE-4: #ab4eef;
-  --COLOR-MODULE-5: #6660df;
-  --COLOR-MODULE-6: #563de5;
-  --COLOR-MODULE-7: #3a26ce;
 
-  --COLOR-MODULE-2-95: #ff1a9a95;
+  --COLOR-MODULE-2-95: #ffffff95;
+
+  --COLOR-FONT: #222222;
   
   }
   

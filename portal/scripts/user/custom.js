@@ -32,11 +32,13 @@ $(function () {
   });
 });
 
-$('ul.menu-text li a[href^="#"]').on("click", function (e) {
+$("ul.menu-text li").on("click", function (e) {
   e.preventDefault();
 
-  var id = $(this).attr("href");
-  var targetOffset = $(id).offset().top;
+  let a_element = $(this).find('a[href^="#"]');
+  let id = $(a_element).attr("href");
+  let targetOffset = $(id).offset().top;
+  console.log(targetOffset);
   try {
     $("ul.menu-text li a.active").removeClass("active");
   } catch (e) {}
@@ -44,7 +46,7 @@ $('ul.menu-text li a[href^="#"]').on("click", function (e) {
 
   $("html, body").animate(
     {
-      scrollTop: targetOffset - 100,
+      scrollTop: targetOffset - 50,
     },
     500
   );
