@@ -1,0 +1,65 @@
+:root {
+    /* cores*/
+    --FF_ONE:         #f3ecaa;  
+    --FF_TWO:         #bbbe33;
+    --FF_THREE:       #cb4f4c;
+    --FF_FOUR:        #f7534f;
+    --FF_FIVE:        #fffcdb; 
+    --FF_SIX:        #fdd9c0; 
+    --FF_FONT_H:      #fff; 
+    --COLOR_BG_GRAY:  #efeffb;
+    --COLOR_BG_GRAY-2:  #e4e4e7;
+    --FF_FOUR_60_PERCENT:        #ffffff60;
+    --COLOR-MODULE-2-95: #ffffff95;
+    --COLOR-FONT: #000000;    
+}
+
+html, body {
+    color: var(--COLOR-FONT);
+    font-size: 16px;
+}
+
+section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+p {
+font-size: 1rem;
+}
+
+.bg-color-1 {
+    background-color: var(--FF_ONE);
+}
+.bg-color-2 {
+    background-color: var(--FF_FIVE);
+}
+.bg-color-3 {
+    background-color: #fffcda;
+}
+
+.title-1 {
+    text-align: center;
+}
+
+.btn-primary {
+    width: 200px;
+    height: 70px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--FF_FOUR);
+    border-color: var(--FF_FOUR);
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: var(--FF_THREE);
+    border-color: var(--FF_THREE);
+}
+
+.row-flex {
+    display: flex;
+    align-items: center;
+
+}
