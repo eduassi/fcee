@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 200px;
-  background: var(--FF_FIVE);
+  background: white;
 }
 .top-art img {
   width: 170px;
@@ -31,11 +31,15 @@ body {
 }
 .top-art div h1 {
   font-size: 2.6rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
 }
 .top-art div h4 {
   font-style: normal;
   font-size: 1.53rem;
   font-weight: bold;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
 }
 .top-art div h5 {
   font-style: oblique;
@@ -82,15 +86,20 @@ body {
   padding: 0;
   height: 100%;
 }
-
+.mt3 {
+  margin-top: 0.75rem;
+}
 .icons-apresenta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
   height: 100%;
-  width: 400px;
+  width: 100%;
   margin: auto;
+  padding-top: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .ia { 
@@ -187,6 +196,16 @@ table td {
 .bg-color-1 {
   background: var(--FF_FOUR);
 }
+.bg-color-3 {
+  background: #f3f4d7;
+}
+.bg-color-4 {
+  background: #f3f4d7;
+}
+.bg-color-5 {
+  background: var(--FF_FIVE);  
+}
+
 a {
   color: var(--COLOR-FONT);
 }
