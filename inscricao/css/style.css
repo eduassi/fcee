@@ -63,3 +63,13 @@ font-size: 1rem;
     align-items: center;
 
 }
+
+@media screen and (max-width: 1199px) {
+
+.row-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+}
