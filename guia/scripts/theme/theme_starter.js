@@ -21,6 +21,24 @@ var check_all_images_complete = function (callback) {
   }
 };
 
+var start_audio_library = function () {
+  GreenAudioPlayer.init({
+    selector: ".player",
+    stopOthersOnPlay: true,
+  });
+  GreenAudioPlayer.init({
+    selector: ".player-with-download",
+    stopOthersOnPlay: true,
+    showDownloadButton: true,
+    enableKeystrokes: true,
+  });
+  GreenAudioPlayer.init({
+    selector: ".player-with-accessibility",
+    stopOthersOnPlay: true,
+    enableKeystrokes: true,
+  });
+};
+
 var initial_setup = function () {
   // Maybe we want to execute some custom scripts
   $('[data-toggle="popover"]').popover();
@@ -29,6 +47,7 @@ var initial_setup = function () {
 var libraries_starter = function () {
   // We should start our libraries here
   refresh_objects_listeners();
+  start_audio_library();
   AOS.init();
 };
 
@@ -38,6 +57,17 @@ var load_page = function (url, callback) {
     initial_setup();
     check_all_images_complete(libraries_starter);
     callback();
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  });
+};
+
+
+var quick_load_page = function (url) {
+  $("#content-viewer").load(url, function () {
+    $(".menu-item.active").removeClass("active")
+    $(".menu-item[linker='" + url + "']").addClass("active")
+    initial_setup();
+    check_all_images_complete(libraries_starter);
     $("html, body").animate({ scrollTop: 0 }, 500);
   });
 };

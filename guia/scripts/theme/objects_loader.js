@@ -172,6 +172,8 @@ var change_scroll_position_by_top_object = function (
   offset_top,
   margin_top
 ) {
+  offset_top = offset_top ? offset_top : 0;
+  margin_top = margin_top ? margin_top : 0;
   let y_scroll_position = $(element).offset().top - offset_top - margin_top;
   window.scrollTo(0, y_scroll_position);
 };
@@ -698,28 +700,105 @@ var refresh_objects_listeners = function () {
     return current;
   }
 
-  $.each($(".progress-bar-container"), function (index, element) {
-    let current = 0;
-    let next_bt = $(this).find(".progress-next");
-    let prev_bt = $(this).find(".progress-prev");
-    let bar = $(this).find(".progress-bar");
-    let text_box = $(this).find(".text-area");
-    let text_items = $(this).find(".text-item");
-    let max_len = text_items.length;
-    let quantum = 100 / text_items.length;
-    set_same_height_collection(text_items);
-    refresh_bar(text_items, bar, current, quantum, 0);
+  $.each(
+    $(".progress-bar-container:not(.progress-bar-menu-footer)"),
+    function (index, element) {
+      let current = 0;
+      let next_bt = $(this).find(".progress-next");
+      let prev_bt = $(this).find(".progress-prev");
+      let bar = $(this).find(".progress-bar");
+      let text_box = $(this).find(".text-area");
+      let text_items = $(this).find(".text-item");
+      let max_len = text_items.length;
+      let quantum = 100 / text_items.length;
+      set_same_height_collection(text_items);
+      refresh_bar(text_items, bar, current, quantum, 0);
 
-    next_bt.on("click", function () {
-      if (current < max_len - 1) {
-        current = refresh_bar(text_items, bar, current, quantum, 1);
-      }
-    });
+      next_bt.on("click", function () {
+        if (current < max_len - 1) {
+          current = refresh_bar(text_items, bar, current, quantum, 1);
+        }
+      });
 
-    prev_bt.on("click", function () {
-      if (current > 0) {
-        current = refresh_bar(text_items, bar, current, quantum, -1);
-      }
+      prev_bt.on("click", function () {
+        if (current > 0) {
+          current = refresh_bar(text_items, bar, current, quantum, -1);
+        }
+      });
+    }
+  );
+
+  //PROGRESS BAR FOOTER
+  $.each(
+    $(".progress-bar-container.progress-bar-menu-footer:not(.done)"),
+    function (index, element) {
+      $(this).addClass("done");
+      let current = Number(current_level);
+      let next_bt = $(this).find(".progress-next");
+      let prev_bt = $(this).find(".progress-prev");
+      let top_bt = $(this).find("#go-top-button");
+      let bar = $(this).find(".progress-bar");
+      let text_items = $(this).find(".text-item");
+      let max_len = text_items.length;
+      let quantum = 100 / text_items.length;
+      set_same_height_collection(text_items);
+      refresh_bar(text_items, bar, current, quantum, 0);
+
+      $.each(text_items, function (i, el) {
+        $(el).on("click", function () {
+
+          let next_page_index = i - 1;
+          let next_page_id = $(el).attr("page-index");
+          let next_page_url = page_name + next_page_id + ".html";
+
+          $(element).find(".text-item:not(.not-active)").addClass("not-active");
+          current = refresh_bar(text_items, bar, next_page_index, quantum, 1);
+          quick_load_page(next_page_url);
+        });
+      });
+
+      top_bt.on("click", function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+      });
+
+      next_bt.on("click", function () {
+        if (current < max_len - 1) {
+          let actual_menu_item = text_items[current + 1];
+          let next_page_id = $(actual_menu_item).attr("page-index");
+          let next_page_url = page_name + next_page_id + ".html";
+          current = refresh_bar(text_items, bar, current, quantum, 1);
+          // menu_page_loader();
+          quick_load_page(next_page_url);
+        }
+      });
+
+      prev_bt.on("click", function () {
+        if (current > 0) {
+          let actual_menu_item = text_items[current - 1];
+          let next_page_id = $(actual_menu_item).attr("page-index");
+          let next_page_url = page_name + next_page_id + ".html";
+          current = refresh_bar(text_items, bar, current, quantum, -1);
+          quick_load_page(next_page_url);
+        }
+      });
+    }
+  );
+
+  //SECTION MENU NAVIGATOR
+
+  $.each($(".section-menu-navigator"), function (index, element) {
+    $(element).empty();
+    let offset_y = 30;
+    let navigate_sections = $(".title-navigate");
+
+    $.each(navigate_sections, function (i, el) {
+      let section_button = $.parseHTML(
+        "<div class='section-button'>" + $(el).text() + "</div>"
+      );
+      $(element).append(section_button);
+      $(section_button).on("click", function () {
+        $("html, body").animate({ scrollTop: $(el).offset().top - offset_y }, 500);
+      });
     });
   });
 

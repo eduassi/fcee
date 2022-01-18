@@ -293,9 +293,10 @@
 }
 
 .citacao p {
-  color: var(--FF_TWO) !important;
+  color: var(--FF_THREE) !important;
   margin-bottom: 0;
   font-style: italic;
+  font-weight: 700;
 }
 
 .box-destaque {
@@ -319,9 +320,9 @@
 }
 
 .video-player div {
-  padding: 40px !important;
-  background: url(../../assets/images/identity/resources/video-border-bot.png)
-    bottom right no-repeat !important;
+  padding: 2px !important;
+  /* background: url(../../assets/images/identity/resources/video-border-bot.png)
+    bottom right no-repeat !important; */
 }
 
 @media only screen and (max-width: 767px) {

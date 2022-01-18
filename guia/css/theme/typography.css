@@ -118,7 +118,8 @@ p,
 ul,
 ol {
     
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
 }
 
 h1,
@@ -126,20 +127,22 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Londrina Solid', cursive; 
+    font-family: 'Barlow', sans-serif;
 }
+
 
 figcaption {
     font-size: 0.8em;
     text-align: center;
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .modulo_1 p,
 .modulo_1 ul,
 .modulo_1 ol{
     color: var(--THEME_FONT_COLOR);
-    font-weight: 400;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
     font-size: 1.15rem;
 }
 
@@ -149,8 +152,8 @@ figcaption {
 .modulo_1 h4,
 .modulo_1 h5{
     color: var(--FF_FONT_H) !important;
-    margin-top: 3.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -160,26 +163,30 @@ figcaption {
 .modulo_1 h1{
     width: 100%;
     text-transform: normal;
-    font-weight: 600;
+    font-weight: 800;
     background-size: 100% 42%;
     background-repeat: no-repeat;
     background-position: bottom;
     background-origin: padding-box;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
+
+/*  H2  Título unidade*/
+.modulo_1 h2{
+  font-size: 1.8rem;
+}
 
 /*  H2  */
 .modulo_1 h2{
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
 
 /*  H3  */
 .modulo_1 h3 {
     padding-left: 0;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1.5rem;
 }
 
@@ -187,6 +194,8 @@ figcaption {
 /*  H4  */
 .modulo_1 h4 {
     font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
 }
 
 

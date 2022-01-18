@@ -1,37 +1,65 @@
 ﻿{
   "information": {
-    "modulo-numero": "Cardápio",
-    "modulo-resumido": "M0",
-    "modulo-nome": "CARDÁPIO DE RECURSOS"
+    "modulo-numero": "Nódulos",
+    "modulo-resumido": "M1",
+    "modulo-nome": "Módulo 1"
   },
   "configuration": {
+    "custom-menu": true,
+    "custon-config": {
+      "auto-id": true,
+      "id-prefix": "menu-button-"
+    },
     "target": "#menu_item_list",
     "start-level": 0,
-    "max-level": 5,
+    "max-level": 6,
     "min-level": 0,
     "prefix-name": "pages/capitulo_"
   },
   "pages": [
-    
     {
-      "placeholder": "Dicas",
-      "url": "pages/capitulo_0.html"
+      "placeholder": "Apresentação do Módulo",
+      "url": "pages/capitulo_0.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u0 unselectable'></div><div class='wide-extra'>Apresentação</div></div>"
+      }
     },
     {
-      "placeholder": "Caixas de destaque",
-      "url": "pages/capitulo_1.html"
+      "placeholder": "Unidade 1",
+      "url": "pages/capitulo_1.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u1 unselectable'></div><div class='wide-extra'>Unidade 1</div></div>"
+      }
     },
     {
-      "placeholder": "Recursos interativos",
-      "url": "pages/capitulo_2.html"
+      "placeholder": "Unidade 2",
+      "url": "pages/capitulo_2.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u2 unselectable'></div><div class='wide-extra'>Unidade 2</div></div>"
+      }
     },
     {
-      "placeholder": "Animações",
-      "url": "pages/capitulo_3.html"
+      "placeholder": "Referências",
+      "url": "pages/capitulo_3.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-referencias unselectable'></div><div class='wide-extra'>Referências</div></div>"
+      }
     },
     {
-      "placeholder": "Exercícios de fixação",
-      "url": "pages/capitulo_4.html"
+      "placeholder": "PDF",
+      "external-url": "assets/files/amparo-projeto-grafico-online.pdf",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-pdf unselectable'></div><div class='wide-extra'>Módulo<br>em PDF</div></div>"
+      }
+    },
+    {
+      "placeholder": "Voltar ao Curso",
+      "external-url-self": "https://grupos.moodle.ufsc.br/course/view.php?id=2578",
+      "custom-button": {
+        "html": "<a class='text-break link-menu-float' target='_self' href='https://grupos.moodle.ufsc.br/course/view.php?id=2578'><div class='menu-item bt-wrapper'><div class='menu-home unselectable'></div><div class='wide-extra'>Voltar ao<br>Curso</div></div></a>"
+      }
     }
   ]
 }
+
+
