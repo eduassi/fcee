@@ -294,6 +294,13 @@ section {
   width: 100%;
 }
 
+.citacao p {
+  color: var(--FF_FONT_H) !important;
+  margin-bottom: 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* NOVO */
 .modal-body {
   padding: 0 1rem;
@@ -1198,6 +1205,27 @@ p.fonte {
   width: 45px;
   height: 43px;
 }
+
+
+.caixa-de-destaque {
+  width: 100%;
+  min-height: 100px;
+}
+
+.caixa-de-destaque > div{
+  width: 100%;
+  height: 100%;
+  border: 3px #c14d56 solid;
+  border-radius: 30px;
+}
+
+.caixa-de-destaque > div > div{
+  width: 100%;
+  height: 100%;
+  background-color: var(--FF_TWO);
+  border-radius: 30px;
+}
+
 
 
 
