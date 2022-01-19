@@ -1282,7 +1282,6 @@ p.fonte {
     font-size: 15px;
   }
   body {
-    overflow-y: auto;
     background: url(../../assets/images/identity/bg-body-mob.png) top center;
     background-repeat: no-repeat;
     background-position-x: center;
