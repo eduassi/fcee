@@ -1221,7 +1221,7 @@ p.fonte {
 }
 
 .dt-box{
-  position: absolute;
+  position: relative;
   top: 10px;
   left: 10px;
   width: 100%;
