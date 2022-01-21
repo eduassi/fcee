@@ -119,7 +119,7 @@ ul,
 ol {
     
     font-family: 'Barlow', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h1,
@@ -141,9 +141,9 @@ figcaption {
 .modulo_1 ul,
 .modulo_1 ol{
     color: var(--THEME_FONT_COLOR);
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
-    font-size: 1.15rem;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 .modulo_1 h1,

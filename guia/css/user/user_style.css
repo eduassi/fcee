@@ -1,3 +1,8 @@
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.2rem;
+}
+
 .marcas {
   width: 600px;
   height: 108px;
@@ -173,16 +178,11 @@ body {
   margin-bottom: 0;
 }
 
-/* GLOSSÁRIO */
-a.link-glossario {
-  text-decoration: none !important;
-  color: var(--FF_ONE) !important;
-  font-weight: bold;
-  cursor: pointer;
-}
-a.link-glossario:hover {
-  text-decoration: underline !important;
-}
+
+
+
+
+
 
 .modulo_1 a.link-menu-float {
   text-decoration: none;
@@ -206,21 +206,9 @@ a.link-glossario:hover {
   height: 60px;
   margin-right: 15px;
 }
-.modal-content {
-  border-radius: 40px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-h4.modal-title {
-  /* color: white !important; */
-}
-.modal-header .close {
-  color: unset;
-}
 
-.modal-lg {
-  width: 35vw !important;
-}
+
+
 
 .citacao {
   margin-bottom: 0;
@@ -957,7 +945,7 @@ div {
 
 .modulo_1 .impacto h4 {
   color: white !important;
-  font-family: "Merriweather";
+  font-family: "Barlow", sans-serif;
   font-weight: normal;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -1003,7 +991,7 @@ p.fonte {
 
 .modulo_1 .sintese h4 {
   color: white !important;
-  font-family: "Merriweather" !important;
+  font-family: "Barlow", sans-serif;
   font-weight: normal;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -1019,7 +1007,6 @@ p.fonte {
 .podcast span {
   color: var(--FF_ONE);
   font-family: "Barlow", sans-serif;
-  font-style: italic;
   margin-bottom: 0;
 }
 
@@ -1237,13 +1224,253 @@ p.fonte {
   font-weight: 700;
 }
 
+.normatizacao {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+}
+
+.norm-1, .norm-2, .norm-3, .norm-4, .norm-5, .norm-6 {
+  position: absolute;
+  z-index: 2;
+}
+.norm-1, .norm-2 {
+  width: 3px;
+  height: 100%;
+  background-color: var(--FF_FONT_COLOR);
+  top: 0;
+  left: 0;
+}
+.norm-2 {
+  width: 3px;
+  height: 100%;
+  background-color: var(--FF_FONT_COLOR);
+  top: 0;
+  left: 100%;
+  z-index: 2;
+}
+.norm-3, .norm-4, .norm-5, .norm-6 {
+  width: 13px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background-color: var(--FF_FONT_COLOR);
+}
+.norm-4 {
+  top: 0;
+  left: calc(100% - 10px);
+}
+.norm-5 {
+  top: 100%;
+  left: 0;
+}
+.norm-6 {
+  top: 100%;
+  left: calc(100% - 10px);
+}
+
+.norm-box {
+  position: relative;
+  width: calc(100% + 6px);
+  height: 100%;
+  top: 10px;
+  left: -10px;
+  background: #e6e7e8;
+  padding-top: 3px;
+  z-index: 0;
+  padding-left: 45px;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  padding-right: 15px;
+}
+
+.norm-img {
+  position: absolute;
+  top: 0px;
+  left: 25px;
+}
+h4.norm-title {
+  position: absolute;
+  top: 0px;
+  left: 80px;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 700;
+  color: var(--FF_FONT_COLOR) !important;
+  font-style: normal !important;
+}
+
+.normatizacao p {
+  color: var(--FF_FONT_COLOR) !important;
+}
+
+.podcast {
+  background-color: #fee8e8 ;
+  min-height: 140px;
+  padding: 15px;
+}
+
+.green-audio-player {
+  width: 400px;
+  min-width: 300px;
+  height: 56px;
+  -webkit-box-shadow: 0 4px 16px 0 rgb(0 0 0 / 7%);
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 7%);
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--FF_COLOR_PODCAST);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.podcast svg path{
+  fill: white !important;
+}
+.podcast-head {
+  height: 78px;
+  display: flex;
+  align-items: center;
+}
+
+.podcast .title {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 700;
+  color: var(--FF_FONT_COLOR) !important;
+  font-style: normal !important;
+  padding: 0;
+  margin: 0;
+  margin-left: 15px;
+}
+.transcricao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 100%;
+  background-color: var(--FF_COLOR_PODCAST);
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.col-flex {
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.modal-transcricao p{
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 400 !important;
+  color: var(--FF_FONT_H) !important;
+  font-size: 1rem !important;
+  font-style: normal;
+}
+.modal-transcricao h4.modal-title {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal;
+  color: var(--FF_FONT_COLOR) !important;
+}
+
+/* GLOSSÁRIO */
+a.link-glossario {
+  text-decoration: none !important;
+  color: var(--FF_ONE) !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+a.link-glossario:hover {
+  text-decoration: underline !important;
+}
+.glossario h4.title {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal;
+  color: var(--FF_FONT_COLOR) !important;
+  text-align: center;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+.glossario .modal-header {
+  position: relative;
+  display: unset;
+  align-content: unset;
+  align-content: unset;
+  padding-top: 15px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+  background: unset;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 120px;
+  border-bottom: unset;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000 !important;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+  z-index: 20;
+}
+
+.glossario .modal-body {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.glossario .modal-content {
+  border-radius: 30px;
+  background-color: #f4fae9;
+  border: 3px solid #b0c14d;
+}
+
+.modal-lg {
+  width: 35vw !important;
+}
 
 
 
-
-
-
-
+.modulo_1 .accordion .card-header.collapsed {
+  background-color: var(--FF_COLOR_OBJETOS-1);
+  background-image: url(../../assets/images/identity/icon/arrow-l.png);
+  background-size: 12px 14px;
+  background-position: right 15px center;
+  border-radius: 5px !important;
+}
+.modulo_1 .accordion h5 {
+  font-size: 1.1rem;
+}
 
 /* RESPONSIVE*/
 @media screen and (max-width: 1199px) {
