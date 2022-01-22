@@ -1,25 +1,32 @@
 :root {
 
   /* AMPARO */
-  --FF_ONE:         #cb4f4c;  
-  --FF_TWO:         #b0c14d;
-  --FF_THREE:       #e02028;
-  --FF_FOUR:        #fa575c; 
-  --FF_FONT_H:      #222222; 
-  --FF_FONT_COLOR:  #d9525b;
-  --COLOR_BG_GRAY:  #efeffb;
-  --COLOR_BG_GRAY-2:  #e4e4e7;
-  --FF_FOUR_60_PERCENT:        #fa575c99;
-  --FF_COLOR_PODCAST: #cc4e57;
-  --FF_COLOR_OBJETOS-1: #e2818b;
-  --FF_COLOR_OBJETOS-2: #b3444b;
-  --FF_COLOR_OBJETOS-3: #f5f8f0;
+  --FF_ONE:                       #cb4f4c;  
+  --FF_TWO:                       #b0c14d;
+  --FF_THREE:                     #e02028;
+  --FF_FOUR:                      #fa575c; 
+  --FF_FONT_H:                    #222222; 
+  --FF_FONT_COLOR:                #d9525b;
+  --COLOR_BG_GRAY:                #efeffb;
+  --COLOR_BG_GRAY-2:              #e4e4e7;
+  --FF_FOUR_60_PERCENT:           #fa575c99;
+  --FF_COLOR_PODCAST:             #cc4e57;
+  --FF_COLOR_OBJETOS-1:           #e2818b;
+  --FF_COLOR_OBJETOS-2:           #b3444b;
+  --FF_COLOR_OBJETOS-3:           #f5f8f0;
+  --FF_COLOR_OBJETOS-4:           #bdcb6b;
+  --FF_COLOR_OBJETOS-5:           #768234;
 
   --FF_COLOR_OBJETOS-VENTANITA-1: #f0babd;
   --FF_COLOR_OBJETOS-VENTANITA-2: #e2818b;
   --FF_COLOR_OBJETOS-VENTANITA-3: #b3444b;
 
+  --FF_COLOR_OBJETOS-TAB-1:       #f7dfe3;
+  --FF_COLOR_OBJETOS-TAB-2:       #e2818b;
+
   }
+
+  
 
   
 
