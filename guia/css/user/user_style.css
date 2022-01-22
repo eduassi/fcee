@@ -1351,6 +1351,15 @@ svg {
   display: flex;
   align-items: center;
 }
+.green-audio-player .slider {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  position: relative;
+}
+
 
 .podcast .title {
   font-family: 'Barlow Condensed', sans-serif !important;
@@ -1459,8 +1468,6 @@ a.link-glossario:hover {
   width: 35vw !important;
 }
 
-
-
 .modulo_1 .accordion .card-header.collapsed {
   background-color: var(--FF_COLOR_OBJETOS-1);
   background-image: url(../../assets/images/identity/icon/arrow-l.png);
@@ -1471,6 +1478,43 @@ a.link-glossario:hover {
 .modulo_1 .accordion h5 {
   font-size: 1.1rem;
 }
+
+
+.modulo_1 .progress-bar {
+  background: var(--FF_COLOR_OBJETOS-2);
+}
+.modulo_1 .progress-bar-container {
+  border-radius: 30px;
+  border: 3pt solid var(--FF_FONT_COLOR);
+}
+.modulo_1 .progress {
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: var(--FF_COLOR_OBJETOS-1);
+  border-radius: 0;
+  border: 3pt solid var(--FF_FONT_COLOR);
+}
+.modulo_1 .progress-next {
+  background: url(../../assets/images/identity/icon/arrow-r.png) var(--FF_FONT_COLOR);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.modulo_1 .progress-prev {
+  background: url(../../assets/images/identity/icon/arrow-l.png) var(--FF_FONT_COLOR);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.button-panel {
+  display: flex;
+  width: 100%;
+  margin-bottom: -43px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* RESPONSIVE*/
 @media screen and (max-width: 1199px) {
