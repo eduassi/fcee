@@ -4,16 +4,17 @@ body {
 }
 
 .marcas {
-  width: 600px;
-  height: 108px;
+  width: 320px;
 }
+.box-header {
+  width: 470px;
+}
+.cover-image {
+position: absolute;
+top: 0;
+right: 0;
+width: 270px;
 
-.cover-img {
-  position: absolute;
-  top: -140px;
-  right: -140px;
-  width: 500px;
-  height: 516px;
 }
 /* custom */
 
@@ -1568,7 +1569,6 @@ a.link-glossario:hover {
   border-radius: 10px;
 }
 
-
 /* JESUS SLIDE */
 .modulo_1 .jesus_slider_no_arrow_image_background .slide_ball {
   background: var(--FF_COLOR_OBJETOS-3);
@@ -1598,8 +1598,6 @@ a.link-glossario:hover {
   border: 3px solid var(--FF_COLOR_OBJETOS-4) !important;
   border-radius: 10px;
 }
-
-
 
 /* TAB  */
 
@@ -1651,15 +1649,16 @@ a.link-glossario:hover {
 
 .tab-content {
   background-color: white !important;
-  color: var(--FF_FONT_H)!important;
+  color: var(--FF_FONT_H) !important;
   padding: 20px;
   border: 3px solid VAR(--FF_COLOR_OBJETOS-TAB-2);
   border-radius: 30px;
 }
-.tab-content p, .tab-content ul li, .tab-content ol li {
+.tab-content p,
+.tab-content ul li,
+.tab-content ol li {
   color: var(--FF_FONT_H);
 }
-
 
 /* FLIPSTER */
 .modulo_1 .flipster_slide {
@@ -1677,7 +1676,6 @@ a.link-glossario:hover {
   border-radius: 20px;
 }
 
-
 /* FLIPCARD */
 .modulo_1 .flip-card-front {
   border: unset;
@@ -1685,12 +1683,6 @@ a.link-glossario:hover {
 .modulo_1 .flip-card-back {
   border: 3pt solid var(--FF_COLOR_OBJETOS-4);
 }
-
-
-
-
-
-
 
 /* ******************************************************************************** */
 /* ******************************************************************************** */
@@ -1785,6 +1777,32 @@ a.link-glossario:hover {
     background-position-y: 0;
     padding-top: 0;
     margin-top: 0;
+  }
+  .transcricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    height: 56px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 4px;
+  
+}
+  .floating-menu {
+    margin-left: 0;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    background-size: 30px 30px;
+}
+.box-header {
+  width: 290px;
+}
+  .container {
+    max-width: 737px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .saiba-mais .sm {
     position: relative;
@@ -1910,7 +1928,21 @@ a.link-glossario:hover {
   .green-audio-player .controls span {
     display: none;
   }
+  .transcricao {
+    width: 230px;  
+}
 
+
+.green-audio-player {
+    width: 230px;
+    min-width: 230px;
+}
+
+  .container {
+    max-width: 545px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .cover-title {
     right: 60px;
     width: unset;
@@ -2004,9 +2036,19 @@ a.link-glossario:hover {
   .cover-title {
     padding: 5px;
   }
+  .container {
+    max-width: 384px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 @media (max-width: 360px) {
+  .container {
+    max-width: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .flipster_carousel_slides {
     margin-left: 9vw;
   }
@@ -2025,6 +2067,11 @@ a.link-glossario:hover {
 }
 
 @media (max-width: 320px) {
+  .container {
+    max-width: 290px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .flipster_carousel_slides {
     margin-left: 2vw;
   }
