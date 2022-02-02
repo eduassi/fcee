@@ -46,19 +46,31 @@ var set_roles = function () {
 };
 
 var set_button = function () {
-  let register = {};
   $("#form-send").on("click", function (e) {
+    $("#form-send").hide();
+    $("#uploading").addClass("on");
+    $("#uploading").fadeIn();
+    let form = new FormData();
+
     let ready_to_send = true;
     let email = "";
     e.preventDefault();
+
     $.each(document.getElementById("register-form").elements, function (i, el) {
-      if (el.id != "form-send") {
+      if (
+        el.id != "form-send" &&
+        el.id != "doc-com-foto" &&
+        el.id != "doc-vinculo"
+      ) {
         let value = el.value;
         if (value) {
           if (el.id == "email") {
             email = el.value;
-            register[el.id] = el.value;
-          } else if (el.id == "email-confirma" && el.value != $("#email").val()) {
+            form.append(el.id, el.value);
+          } else if (
+            el.id == "email-confirma" &&
+            el.value != $("#email").val()
+          ) {
             let email_error_message = $(el)
               .parent()
               .find("#email-error-message");
@@ -74,14 +86,35 @@ var set_button = function () {
               $(email_error_message).fadeIn();
             }
           } else {
-            register[el.id] = el.value;
+            form.append(el.id, el.value);
           }
         } else {
           ready_to_send = false;
           let warning_message = $(el).parent().find("#warning-message");
           if (!$(warning_message).length) {
             warning_message = $.parseHTML(
-              "<span id='warning-message' class='warning'>Erro ao preencher esse campo!</span>"
+              "<span id='warning-message' class='warning'>Campo não preenchido</span>"
+            );
+            $(el).parent().append(warning_message);
+            $(el).on("click", function () {
+              $(warning_message).fadeOut();
+            });
+          } else {
+            $(warning_message).fadeIn();
+          }
+        }
+      } else if (el.id != "doc-com-foto" || el.id != "doc-vinculo") {
+        let file_attached = el.files[0];
+
+        if (file_attached != undefined) {
+          form.append(el.id, file_attached);
+        } else {
+          ready_to_send = false;
+
+          let warning_message = $(el).parent().find("#warning-message");
+          if (!$(warning_message).length) {
+            warning_message = $.parseHTML(
+              "<span id='warning-message' class='warning'>Documento não selecionado!</span>"
             );
             $(el).parent().append(warning_message);
             $(el).on("click", function () {
@@ -93,19 +126,25 @@ var set_button = function () {
         }
       }
     });
+
     if (ready_to_send) {
       $.ajax({
         type: "POST",
         url: api_base_url + "/register/new_register",
-        contentType: "application/json",
-        data: JSON.stringify(register),
+        cache: false,
+        processData: false,
+        contentType: false,
+        mimeType: "multipart/form-data",
+        data: form,
         success: function (data) {
-          console.log(data);
-          alert(data["message"]);
+          $("#register-screen").hide();
+          $("#feedback-screen").show();
+          $("#uploading").fadeOut();
         },
         error: function (data) {
-          console.log(data.responseJSON.message);
-          alert(data.responseJSON.message);
+          alert(JSON.parse(data.responseText)["message"]);
+          $("#form-send").show();
+          $("#uploading").fadeOut();
         },
       });
     }
@@ -114,16 +153,12 @@ var set_button = function () {
 
 $(function () {
   if (window.location.hostname == "localhost") {
-    api_base_url = "https://localhost/projects/FCEE/api/";
+    api_base_url = "https://localhost/projects/FCEE/api";
   } else {
-    api_base_url = "";
+    api_base_url = "https://inscricao.fcee-sc.net.br/api";
   }
   set_genders();
   set_states();
   set_roles();
   set_button();
-  
-  $.each(document.getElementById("register-form").elements, function (i, el) {
-    el.value = "ok"
-  })
 });

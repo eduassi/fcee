@@ -52,7 +52,24 @@
     </div>
   </section>
 
-  <section class="bg-color-1">
+  <section class="bg-color-1" id="feedback-screen">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto">
+          <h1 class="mb-5" style="text-align: center">Formulário enviado!</h1>
+          <div style="display: flex; justify-content: center">
+            <img class="img-fluid" style="text-align: center" src="assets/images/sent.png" />
+          </div>
+          <p class="mt-5">
+            Um e-mail de confirmação do envio do formulário foi enviado para
+            você. Aguarde a homologação da sua inscrição.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-color-1" id="register-screen">
     <div class="container">
       <div class="row">
         <div class="col-md-10 mx-auto">
@@ -102,19 +119,20 @@
             <div class="row mb-3">
               <div class="col-md-6">
                 <label for="inputEmail1" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite o seu e-mail" />
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                  placeholder="Digite o seu e-mail" />
               </div>
               <div class="col-md-6">
                 <label for="inputEmail1" class="form-label">Confirmação do seu e-mail</label>
-                <input type="email" class="form-control" id="email-confirma" aria-describedby="emailHelp" placeholder="Confirme o seu e-mail"/>
-
+                <input type="email" class="form-control" id="email-confirma" aria-describedby="emailHelp"
+                  placeholder="Confirme o seu e-mail" />
               </div>
             </div>
 
             <div class="row mb-3">
               <div class="col-md-2">
                 <label for="inputEmail1" class="form-label">DDD</label>
-                <input type="number" class="form-control" id="ddd" placeholder="DDD"/>
+                <input type="number" class="form-control" id="ddd" placeholder="DDD" />
               </div>
 
               <div class="col-md-10">
@@ -146,21 +164,29 @@
               <input type="text" id="local-atuacao" class="form-control" placeholder="" />
             </div>
 
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <label for="disabledTextInput" class="form-label">Documento com foto</label>
-              <input type="file" id="doc-com-foto" class="form-control" placeholder="" />
+              <input type="file" id="doc-com-foto" class="form-control"
+                accept="application/pdf, image/png, image/jpg, image/jpeg" placeholder="" />
             </div>
 
             <div class="mb-4">
               <label for="disabledTextInput" class="form-label">Documento comprovação de vínculo</label>
-              <input type="file" id="doc-vinculo" class="form-control" placeholder="" />
-            </div> -->
-
+              <input type="file" id="doc-vinculo" class="form-control"
+                accept="application/pdf, image/png, image/jpg, image/jpeg" placeholder="" />
+            </div>
           </form>
-          <button id="form-send" type="submit" class="btn btn-primary">Enviar a inscrição</button>
+          <button id="form-send" type="submit" class="btn btn-primary">
+            Enviar a inscrição
+          </button>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="bg-color-1" id="uploading">
+    <div><img style="width: 100px;" src="assets/images/uploading.png" /></div>
+    <p>Enviando formulário, aguarde alguns instantes</p>
   </section>
 
   <section class="bg-color-2">
@@ -171,7 +197,9 @@
           <p data-aos="fade-up">Acesse nosso canal de atendimento:</p>
           <p data-aos="fade-up">
             E-mail:
-            <a href="mailto:fcee.edbasica@gmail.com">fcee.edbasica@gmail.com</a>
+
+            <a href="mailto:contato@fcee-sc.net.br">contato@fcee-sc.net.br</a>
+            <!-- <a href="mailto:fcee.edbasica@gmail.com">fcee.edbasica@gmail.com</a> -->
           </p>
         </div>
       </div>

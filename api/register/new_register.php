@@ -7,10 +7,10 @@ include_once '../config/database.php';
 include_once '../config/settings.php';
 
 // instantiate product object
-include_once '../objects/login.php';
 include_once '../objects/register.php';
 
 include_once '../global/utils.php';
+include_once '../global/mail.php';
 
 // get posted data
 // new_register
@@ -20,62 +20,70 @@ $data = json_decode(file_get_contents("php://input"));
 $database = new Database();
 $db = $database->getConnection();
 
-$table_abstraction = new Register($db);
-$table_abstraction->nome = $data->{"nome"};
-$table_abstraction->orgaoEmissor = $data->{"orgao-emissor"};
-$table_abstraction->curso = $data->{"curso"};
-$table_abstraction->municipioReside = $data->{"municipio"};
-$table_abstraction->localAtuacao = $data->{"local-atuacao"};
-$table_abstraction->cpf = $data->{"cpf"};
-$table_abstraction->rg = $data->{"rg"};
-$table_abstraction->matricula = $data->{"matricula"};
-$table_abstraction->email = $data->{"email"};
-$table_abstraction->ddd = $data->{"ddd"};
-$table_abstraction->telefone = $data->{"telefone"};
-$table_abstraction->sexo = $data->{"sexo"};
-$table_abstraction->estado = $data->{"estado"};
-$table_abstraction->atuacao = $data->{"atuacao"};
+
+$maximum_size = 25000000; // 25MB
+$valid_extensions = array('jpeg', 'jpg', 'png', 'pdf');
 
 
-$db->beginTransaction();
-$query_result = $table_abstraction->new_register();
 
-if ($query_result[0]) {
-    $db->commit();
-    $response = array("message" => getMessage($query_result[1]));
-    http_response_code(201);
-    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo", $_FILES)) {
+    $doc_foto = $_FILES["doc-com-foto"];
+    $doc_vinculo = $_FILES["doc-vinculo"];
+    if (
+        in_array(pathinfo($doc_foto["name"], PATHINFO_EXTENSION), $valid_extensions) &&
+        in_array(pathinfo($doc_vinculo["name"], PATHINFO_EXTENSION), $valid_extensions) &&
+        $doc_foto["size"] < $maximum_size &&
+        $doc_vinculo["size"] < $maximum_size
+    ) {
 
-    // $new_folder_path = $VAULT_PATH . "/" . $decoded_token->userUniqueId . "/" . $new_course_folder_name;
+        $table_abstraction = new Register($db);
+        $table_abstraction->nome = $_POST["nome"];
+        $table_abstraction->orgaoEmissor = $_POST["orgao-emissor"];
+        $table_abstraction->curso = $_POST["curso"];
+        $table_abstraction->municipioReside = $_POST["municipio"];
+        $table_abstraction->localAtuacao = $_POST["local-atuacao"];
+        $table_abstraction->cpf = $_POST["cpf"];
+        $table_abstraction->rg = $_POST["rg"];
+        $table_abstraction->matricula = $_POST["matricula"];
+        $table_abstraction->email = $_POST["email"];
+        $table_abstraction->ddd = $_POST["ddd"];
+        $table_abstraction->telefone = $_POST["telefone"];
+        $table_abstraction->sexo = $_POST["sexo"];
+        $table_abstraction->estado = $_POST["estado"];
+        $table_abstraction->atuacao = $_POST["atuacao"];
 
-    // if (mkdir($new_folder_path)) {
-    //     try {
-    //         $new_course["id"] = $course_folder_id;
-    //         $new_course["name"] = $data->name;
-    //         $new_course["description"] = $data->description;
-    //         $new_course["created_at"] = $now_date;
+        $upload_path = '../../documents/' . $table_abstraction->getCPF() . '/';
 
-    //         $result["active_courses"] = $owner_account["active_courses"] + 1;
-    //         $result["new_course"] = $new_course;
+        $db->beginTransaction();
 
+        remove_dir_recursively($upload_path);
+        mkdir($upload_path, 0777, true);
 
-    //         $db->commit();
-    //         http_response_code(201);
-    //         echo json_encode($result, JSON_UNESCAPED_UNICODE);
-    //     } catch (Exception $e) {
-    //         $db->rollBack();
-    //         $response = array("message" => getMessage("genericFailure"));
-    //         http_response_code(503);
-    //         echo json_encode($response, JSON_UNESCAPED_UNICODE);
-    //     }
-    // } else {
-    //     $db->rollBack();
-    //     $response = array("message" => getMessage("genericFailure"));
-    //     http_response_code(503);
-    //     echo json_encode($response, JSON_UNESCAPED_UNICODE);
-    // }
+        $query_result = $table_abstraction->new_register();
+
+        if (
+            $query_result[0] &&
+            move_uploaded_file($doc_foto['tmp_name'], $upload_path . $doc_foto['name']) &&
+            move_uploaded_file($doc_vinculo['tmp_name'], $upload_path . $doc_vinculo['name'])
+        ) {
+            $db->commit();
+            send_email($table_abstraction->getName(), $table_abstraction->getEmail());
+
+            $response = array("message" => getMessage($query_result[1]));
+            http_response_code(201);
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        } else {
+            $response = array("message" => $query_result[1]);
+            http_response_code(503);
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        }
+    } else {
+        $response = array("message" => "Arquivos com extensão não suportada.");
+        http_response_code(503);
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
 } else {
-    $response = array("message" => $query_result[1]);
+    $response = array("message" => "Faltam arquivos.");
     http_response_code(503);
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
 }

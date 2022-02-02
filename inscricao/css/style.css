@@ -1,5 +1,6 @@
 :root {
   /* cores*/
+  --FF_ONE_TRANSPARENT: #f3ecaaa0;
   --FF_ONE: #f3ecaa;
   --FF_TWO: #bbbe33;
   --FF_THREE: #cb4f4c;
@@ -84,7 +85,28 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.warning{
-    color: red;
-    font-style: italic;
+.warning {
+  color: red;
+  font-style: italic;
+}
+
+#feedback-screen {
+  display: none;
+}
+
+#uploading.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--FF_ONE_TRANSPARENT);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#uploading {
+  display: none;
 }

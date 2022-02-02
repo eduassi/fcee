@@ -70,6 +70,20 @@ class Register
         }
     }
 
+    public function getCPF()
+    {
+        return $this->cpf;
+    }
+
+    public function getName()
+    {
+        return $this->nome;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
     public function new_register()
     {
@@ -102,10 +116,10 @@ class Register
             return [false, getMessage("genericFailure")];
         } catch (Exception $e) {
             $message = "";
-            if(strpos($e->getMessage(), "Duplicate") && strpos($e->getMessage(), "cpf")){
-                $message = "CPF já existe na base de dados!";
-            }else{
-                $message = "Algum dado preenchido de forma incorreta!";
+            if (strpos($e->getMessage(), "Duplicate") && strpos($e->getMessage(), "cpf")) {
+                $message = "CPF já existe na base de dados! Caso não tenha feito cadastro, entre em contato conosco!";
+            } else {
+                $message = "Dado preenchidos de forma incorreta! Por favor, revise o formulário.";
             }
             return [false, $message];
         }
