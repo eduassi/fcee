@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- THIRD PARTY LIBRARIES STYLE -->
+  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap/stylish-portfolio.min.css" rel="stylesheet" />
+  <link href="css/dragndrop/dragndrop.css" rel="stylesheet" />
+  <link href="css/aos/aos.css" rel="stylesheet" />
+  <link href="css/jquery/jquery.datatables.min.css" rel="stylesheet" />
+
+  <!-- THEME STYLE -->
+  <link href="https://generalwebsolutions.com.br/ELC-Easy-Constructor-Framework/dist/css/theme/theme_color_setup.css"
+    rel="stylesheet" />
+  <link href="https://generalwebsolutions.com.br/ELC-Easy-Constructor-Framework/dist/css/theme/theme_typography.css"
+    rel="stylesheet" />
+  <link href="https://generalwebsolutions.com.br/ELC-Easy-Constructor-Framework/dist/css/theme/theme_style.css"
+    rel="stylesheet" />
+  <link href="https://generalwebsolutions.com.br/ELC-Easy-Constructor-Framework/dist/css/theme/objects_style.css"
+    rel="stylesheet" />
+
+  <!-- OPTIONAL -->
+  <!-- USER STYLES | SUGGESTED STRUCTURE -->
+  <link href="css/user/user_color_setup.css" rel="stylesheet" />
+  <link href="css/user/user_objects_style.css" rel="stylesheet" />
+  <link href="css/user/user_style.css" rel="stylesheet" />
+  <script src="lib/fontawesome/fontawesome.js" crossorigin="anonymous"></script>
+
+  <meta name="description" content="Ferramenta administrativa FCEE" />
+  <meta name="keywords" content="G3WS, EaD, Vídeos" />
+  <meta name="author" content="Renan Pinho Assi (G3WS)" />
+
+  <title>Sistema de homologação FCEE powered by G3WS</title>
+</head>
+
+<body id="module-wrapper">
+  <div id="menu-viewer">
+    <div class="menu">
+      <div class="logo-cbr menu-logo" onclick="track_history_and_change_page('Homologation')"></div>
+      <div class="menu-button-holder">
+        <div class="menu-buttons button-logout" onclick="logout()">
+          <i class="fas fa-door-open"></i>
+        </div>
+
+        <div class="menu-buttons button-homologation" style="color: black;" onclick="track_history_and_change_page('Homologation')">
+          <i class="fas fa-user-clock"></i>
+        </div>
+        <div class="menu-buttons button-rejected-registers" style="color: red;" onclick="track_history_and_change_page('Rejected')">
+          <i class="fas fa-user-alt-slash"></i>
+        </div>
+        <div class="menu-buttons button-accepted-registers" style="color: green;" onclick="track_history_and_change_page('Accepted')">
+          <i class="fas fa-user-check"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content-viewer"></div>
+  <div id="preloader-viewer"></div>
+</body>
+
+<!-- THIRD PARTY LIBRARIES -->
+<script src="lib/jquery/jquery-3.4.1.min.js"></script>
+<script src="lib/bootstrap/popper.min.js"></script>
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+<script src="lib/bootstrap/bootstrap_starter.js"></script>
+<script src="lib/jquery/jquery.easing.min.js"></script>
+<script src="lib/jquery/jquery.datatables.min.js"></script>
+<script src="lib/lodash/lodash.js"></script>
+<script src="lib/dragndrop/dragndrop.js"></script>
+<script src="lib/aos/aos.js"></script>
+
+<!-- Theme scripts -->
+<script src="scripts/framework/ELC.js"></script>
+
+<!-- User scripts -->
+<script src="scripts/global/global.js"></script>
+<script src="scripts/global/account_methods.js"></script>
+<script src="scripts/global/router.js"></script>
+<script src="scripts/global/ready.js"></script>
+
+</html>

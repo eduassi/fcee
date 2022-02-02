@@ -28,6 +28,13 @@ class Register
     private $estado;
     private $atuacao;
 
+    private $documentoFoto;
+    private $documentoVinculo;
+
+
+    private $dataRegistro;
+    private $dataHomologado;
+
     // constructor with $db as database connection
     public function __construct($db)
     {
@@ -43,17 +50,31 @@ class Register
                 case "nome":
                 case "orgaoEmissor":
                 case "curso":
-                    $value =  preg_replace("/[^a-zA-Z\s]/", "", $value);
+                    $value =  preg_replace("/[^a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]/", "", $value);
                     $value = ucwords($value);
                     break;
                 case "rg":
                     $value = preg_replace("/[^0-9]/", "", $value);
-                    if (strlen($value) == 11) {
-                        $value = substr($value, 0, 3) . "." . substr($value, 3, 3) . "." . substr($value, 6, 3) . "-" . substr($value, 9, 2);
-                    }
                     break;
                 case "cpf":
                     $value = preg_replace("/[^0-9]/", "", $value);
+
+                    if (strlen($value) != 11 || preg_match('/(\d)\1{10}/', $value)) {
+                        $value = null;
+                        break;
+                    }
+
+                    for ($t = 9; $t < 11; $t++) {
+                        for ($d = 0, $c = 0; $c < $t; $c++) {
+                            $d += $value[$c] * (($t + 1) - $c);
+                        }
+                        $d = ((10 * $d) % 11) % 10;
+                        if ($value[$c] != $d) {
+                            $value = null;
+                            break;
+                        }
+                    }
+
                     $value = substr($value, 0, 3) . "." . substr($value, 3, 3) . "." . substr($value, 6, 3) . "-" . substr($value, 9, 2);
                     break;
                 case "ddd":
@@ -85,10 +106,79 @@ class Register
         return $this->email;
     }
 
+    public function get_pending_registers()
+    {
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado IS NULL ORDER BY dataRegistro ASC";
+
+        $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
+    public function get_accepted_registers()
+    {
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='1' ORDER BY dataRegistro ASC";
+
+        $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
+    public function get_rejected_registers()
+    {
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='0' ORDER BY dataRegistro ASC";
+
+        $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
+    public function accept_register()
+    {
+        $query = "UPDATE registro SET homologado = '1', dataHomologado = CURRENT_TIMESTAMP WHERE registro.id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $this->id);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public function reject_register()
+    {
+        $query = "UPDATE registro SET homologado = '0' WHERE registro.id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $this->id);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function new_register()
     {
         // query to insert record
-        $query = "INSERT INTO registro (nome, orgaoEmissor, curso, municipioReside, localAtuacao, cpf, rg, matricula, email, ddd, telefone, sexo, estado, atuacao) VALUES (:nome, :orgaoEmissor, :curso, :municipioReside, :localAtuacao, :cpf, :rg, :matricula, :email, :ddd, :telefone, :sexo, :estado, :atuacao)";
+        $query = "INSERT INTO registro (nome, orgaoEmissor, curso, municipioReside, localAtuacao, cpf, rg, matricula, email, ddd, telefone, sexo, estado, atuacao, documentoFoto, documentoVinculo) VALUES (:nome, :orgaoEmissor, :curso, :municipioReside, :localAtuacao, :cpf, :rg, :matricula, :email, :ddd, :telefone, :sexo, :estado, :atuacao, :documentoFoto, :documentoVinculo)";
 
 
         // prepare query
@@ -108,6 +198,8 @@ class Register
         $stmt->bindParam(":sexo", $this->sexo);
         $stmt->bindParam(":estado", $this->estado);
         $stmt->bindParam(":atuacao", $this->atuacao);
+        $stmt->bindParam(":documentoFoto", $this->documentoFoto);
+        $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
 
         try {
             if ($stmt->execute()) {
@@ -116,6 +208,7 @@ class Register
             return [false, getMessage("genericFailure")];
         } catch (Exception $e) {
             $message = "";
+            echo var_dump($e);
             if (strpos($e->getMessage(), "Duplicate") && strpos($e->getMessage(), "cpf")) {
                 $message = "CPF já existe na base de dados! Caso não tenha feito cadastro, entre em contato conosco!";
             } else {
