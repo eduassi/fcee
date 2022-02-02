@@ -1,5 +1,29 @@
 var api_base_url;
 
+var TestaCPF = function (strCPF) {
+  strCPF = strCPF.replace(/[^0-9]/g, "");
+  var Soma;
+  var Resto;
+  Soma = 0;
+  if (strCPF == "00000000000") return false;
+
+  for (i = 1; i <= 9; i++)
+    Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+  Resto = (Soma * 10) % 11;
+
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+  Soma = 0;
+  for (i = 1; i <= 10; i++)
+    Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+  Resto = (Soma * 10) % 11;
+
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+  return true;
+};
+
 var set_dropdown = function (data, target) {
   let body_string = "";
   $.each(data, function (index, element) {
@@ -47,9 +71,6 @@ var set_roles = function () {
 
 var set_button = function () {
   $("#form-send").on("click", function (e) {
-    $("#form-send").hide();
-    $("#uploading").addClass("on");
-    $("#uploading").fadeIn();
     let form = new FormData();
 
     let ready_to_send = true;
@@ -71,6 +92,7 @@ var set_button = function () {
             el.id == "email-confirma" &&
             el.value != $("#email").val()
           ) {
+            ready_to_send = false;
             let email_error_message = $(el)
               .parent()
               .find("#email-error-message");
@@ -84,6 +106,26 @@ var set_button = function () {
               });
             } else {
               $(email_error_message).fadeIn();
+            }
+          } else if (el.id == "cpf") {
+            if (!TestaCPF(el.value)) {
+              ready_to_send = false;
+              let cpf_error_message = $(el)
+                .parent()
+                .find("#email-error-message");
+              if (!$(cpf_error_message).length) {
+                cpf_error_message = $.parseHTML(
+                  "<span id='cpf-error-message' class='warning'>CPF inválido!</span>"
+                );
+                $(el).parent().append(cpf_error_message);
+                $(el).on("click", function () {
+                  $(cpf_error_message).fadeOut();
+                });
+              } else {
+                $(cpf_error_message).fadeIn();
+              }
+            } else {
+              form.append(el.id, el.value);
             }
           } else {
             form.append(el.id, el.value);
@@ -128,6 +170,9 @@ var set_button = function () {
     });
 
     if (ready_to_send) {
+      $("#form-send").hide();
+      $("#uploading").addClass("on");
+      $("#uploading").fadeIn();
       $.ajax({
         type: "POST",
         url: api_base_url + "/register/new_register",
@@ -147,6 +192,8 @@ var set_button = function () {
           $("#uploading").fadeOut();
         },
       });
+    } else {
+      window.scrollTo(0, document.getElementById("header").clientHeight);
     }
   });
 };

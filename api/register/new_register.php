@@ -28,10 +28,13 @@ $valid_extensions = array('jpeg', 'jpg', 'png', 'pdf');
 
 if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo", $_FILES)) {
     $doc_foto = $_FILES["doc-com-foto"];
+    $doc_foto_ext = pathinfo($doc_foto["name"], PATHINFO_EXTENSION);
     $doc_vinculo = $_FILES["doc-vinculo"];
+    $doc_vinculo_ext = pathinfo($doc_vinculo["name"], PATHINFO_EXTENSION);
+
     if (
-        in_array(pathinfo($doc_foto["name"], PATHINFO_EXTENSION), $valid_extensions) &&
-        in_array(pathinfo($doc_vinculo["name"], PATHINFO_EXTENSION), $valid_extensions) &&
+        in_array($doc_foto_ext, $valid_extensions) && 
+        in_array($doc_vinculo_ext, $valid_extensions) &&
         $doc_foto["size"] < $maximum_size &&
         $doc_vinculo["size"] < $maximum_size
     ) {
@@ -51,6 +54,8 @@ if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo",
         $table_abstraction->sexo = $_POST["sexo"];
         $table_abstraction->estado = $_POST["estado"];
         $table_abstraction->atuacao = $_POST["atuacao"];
+        $table_abstraction->documentoFoto = $doc_foto_ext;
+        $table_abstraction->documentoVinculo = $doc_vinculo_ext;
 
         $upload_path = '../../documents/' . $table_abstraction->getCPF() . '/';
 
@@ -63,8 +68,9 @@ if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo",
 
         if (
             $query_result[0] &&
-            move_uploaded_file($doc_foto['tmp_name'], $upload_path . $doc_foto['name']) &&
-            move_uploaded_file($doc_vinculo['tmp_name'], $upload_path . $doc_vinculo['name'])
+            move_uploaded_file($doc_foto['tmp_name'], $upload_path . $PICTURE_DOCUMENT_NAME . "." . $doc_foto_ext) &&
+            move_uploaded_file($doc_vinculo['tmp_name'], $upload_path . $COMPROVATION_DOCUMENT_NAME . "." . $doc_vinculo_ext)
+            
         ) {
             $db->commit();
             send_email($table_abstraction->getName(), $table_abstraction->getEmail());
