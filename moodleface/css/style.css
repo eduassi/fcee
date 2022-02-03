@@ -172,6 +172,10 @@ a:hover {
   position: relative;
   width: calc(100vw / 4);
   height: 100%;
+  margin-right: 10px;
+}
+.module-menu.module-4 {
+  margin-right: 0;
 }
 .heart:hover span {
   font-size: 2.9rem !important;
@@ -185,7 +189,7 @@ a:hover {
 
 .accordion > .card {
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 15px !important;
 }
 
 .card h5 {
@@ -201,7 +205,7 @@ a:hover {
 .heart {
   position: absolute;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   flex-direction: column;
   width: 100%;
@@ -210,8 +214,8 @@ a:hover {
   background-position: center;
   background-size: 94% 94%;
   background-repeat: no-repeat;
-  text-align: center;
-  font-size: 0.75rem;
+  /* text-align: center; */
+  font-size: 1.2rem !important;
   color: white;
   cursor: pointer;
   -webkit-user-select: none; /* Chrome all / Safari all */
@@ -221,8 +225,11 @@ a:hover {
 
   height: calc(80vw / 7);
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 60px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   z-index: 1;
+  padding-left: 30px;
 }
 
 .heart.shadow-button-heart {
@@ -236,16 +243,35 @@ a:hover {
 }
 
 .module-1 .heart, #first_accordion_head_1 {
-  background-color: var(--COLOR-MODULE-1);
+  background: url(../assets/m1.svg);
+  background-size: cover;
+  background-position: 100%  0;
+  background-repeat: no-repeat;
+  border-radius: 15px !important;
 }
 .module-2 .heart, #first_accordion_head_2 {
-  background-color: var(--COLOR-MODULE-2);
+  background: url(../assets/m2.svg);
+  background-size: cover;
+  background-position: 100%  0;
+  background-repeat: no-repeat;
+  border-radius: 15px !important;
 }
 .module-3 .heart, #first_accordion_head_3 {
-  background-color: var(--COLOR-MODULE-3);
+  background: url(../assets/m3.png);
+  background-size: cover;
+  background-position: 100%  0;
+  background-repeat: no-repeat;
+  border-radius: 15px !important;
 }
 .module-4 .heart, #first_accordion_head_4 {
-  background-color: var(--COLOR-MODULE-4);
+  background: url(../assets/m4.png);
+  background-size: cover;
+  background-position: 100%  0;
+  text-align: center;
+  padding-left: 0;
+  background-repeat: no-repeat;
+  border-radius: 15px !important;
+
 }
 .module-5 .heart, #first_accordion_head_5 {
   background-color: var(--COLOR-MODULE-5);
@@ -348,6 +374,7 @@ a:hover {
   padding: 4px 8px;
   cursor: pointer;
   color: var(--FF_FONT_H);
+  border-radius: 10px !important;
 }
 
 .menu-item:hover {
@@ -362,11 +389,13 @@ a:hover {
 
 .card-body {
   padding-top: 5px;
+  border-radius:10px !important;
 }
 
 .card-body {
   padding-right: 0;
   padding-left: 30px;
+  border-radius:10px !important;
 }
 
 .byncnd p {
@@ -525,6 +554,37 @@ img.logo{
   }
   img.logo{
     max-width: 240px;
+  }
+  .module-1 .heart, #first_accordion_head_1 {
+    background: url(../assets/m1.svg);
+    background-size: cover;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px !important;
+  }
+  .module-2 .heart, #first_accordion_head_2 {
+    background: url(../assets/m2.svg);
+    background-size: cover;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px !important;
+  }
+  .module-3 .heart, #first_accordion_head_3 {
+    background: url(../assets/m3.png);
+    background-size: cover;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px !important;
+  }
+  .module-4 .heart, #first_accordion_head_4 {
+    background: url(../assets/m4.png);
+    background-size: cover;
+    background-position: 100% 100%;
+    text-align: center;
+    padding-left: 0;
+    background-repeat: no-repeat;
+    border-radius: 15px !important;
+  
   }
 }
 @media (max-width: 575px) {
