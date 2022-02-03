@@ -433,8 +433,20 @@ img.logo{
   body {
     font-size: 16px;
   }
+  .module-container-mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 @media (max-width: 767px) {
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* margin-right: -15px; */
+    margin-left: 0;
+}
   html,
   body {
     font-size: 14px;
@@ -556,25 +568,25 @@ img.logo{
     max-width: 240px;
   }
   .module-1 .heart, #first_accordion_head_1 {
-    background: url(../assets/m1.svg);
+    background: url(../assets/m1_mob.png);
     background-size: cover;
     background-position: 100% 100%;
     background-repeat: no-repeat;
-    border-radius: 15px !important;
+    border-radius: 10px !important;
   }
   .module-2 .heart, #first_accordion_head_2 {
-    background: url(../assets/m2.svg);
+    background: url(../assets/m2_mob.png);
     background-size: cover;
     background-position: 100% 100%;
     background-repeat: no-repeat;
-    border-radius: 15px !important;
+    border-radius: 10px !important;
   }
   .module-3 .heart, #first_accordion_head_3 {
-    background: url(../assets/m3.png);
+    background: url(../assets/m3_mob.png);
     background-size: cover;
     background-position: 100% 100%;
     background-repeat: no-repeat;
-    border-radius: 15px !important;
+    border-radius: 10px !important;
   }
   .module-4 .heart, #first_accordion_head_4 {
     background: url(../assets/m4.png);
@@ -583,9 +595,16 @@ img.logo{
     text-align: center;
     padding-left: 0;
     background-repeat: no-repeat;
-    border-radius: 15px !important;
+    border-radius: 10px !important;
   
   }
+  .module-container-mobile {
+    background-color: unset;
+}
+.accordion > .card {
+  overflow: hidden;
+  border-radius: 10px !important;
+}
 }
 @media (max-width: 575px) {
    img.logo{
