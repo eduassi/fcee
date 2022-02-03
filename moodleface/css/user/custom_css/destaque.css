@@ -1,0 +1,263 @@
+.citation{
+    width: 100%;
+    height: auto;
+    background: url(../../../assets/images/identity/resources/citation-top.png);
+    background-position-x: 0;
+    background-position-y: 0;
+    background-repeat: no-repeat;
+}
+.citation .in{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background: url(../../../assets/images/identity/resources/citation-bottom.png);
+    background-position-x: 100%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+}
+.citation p{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* glossário */
+
+span.gls{
+    background-color: #006563;
+    padding-left: 3px;
+    padding-right: 3px;
+    color:white;
+    cursor: pointer;
+}
+
+.glossario-modal .modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: none !important;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    border-radius: 15px;
+}
+
+
+
+
+/* PRF */
+.featured-prf {
+    position: relative;
+    padding: 0;    
+}
+.featured-prf .in {
+    position: relative;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+}
+.featured-prf .txt{
+    position: absolute;
+    top: -26px;
+    left: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400; 
+}
+.featured-prf .icon{
+    position: absolute;
+    top: -70px;
+    left: 110px;
+}
+.destaque {
+    position: relative;
+}
+.bar-top-h{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 30%;
+    background-color: #929292;
+}
+.bar-top-v{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30%;
+    width: 2px;
+    background-color: #929292;
+}
+.bar-bottom-h{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 2px;
+    width: 30%;
+    background-color: #929292;
+}
+.bar-bottom-v{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 30%;
+    width: 2px;
+    background-color: #929292;
+}
+.featured-prf .in p, .destaque p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* para-refletir */
+
+.para-refletir {
+    position: relative;
+    padding: 0;
+    padding-top: 37px;
+    padding-left: 2px;
+}
+.para-refletir .in {
+    background-color: #ffeec6;
+}
+.para-refletir .txt{
+    color: #ffca3e;
+}
+.glossario .icon{
+    position: absolute;
+    top: -70px;
+    left: 70px;
+}
+.para-refletir .bar-top-v, 
+.para-refletir .bar-top-h, 
+.para-refletir .bar-bottom-h, 
+.para-refletir .bar-bottom-v{
+    background-color: #ffca3e;
+}
+
+
+/* glossário */
+.glossario {
+    position: relative;
+    padding: 0;
+    padding-top: 37px;
+    padding-left: 2px;
+    margin-bottom: 50px !important;
+    margin-top: 40px; 
+}
+.glossario .in {
+    background-color: #afdedc;
+}
+.glossario .txt{
+    color: #006563;
+}
+.glossario .bar-top-v, 
+.glossario .bar-top-h, 
+.glossario .bar-bottom-h, 
+.glossario .bar-bottom-v{
+    background-color: #006563;
+}
+
+
+
+/* saiba mais */
+.saiba-mais {
+    position: relative;
+    padding: 0;
+    padding-top: 58px;
+    padding-left: 2px;
+}
+.saiba-mais .in {
+    background-color: #d1d8e5;
+}
+.saiba-mais .txt{
+    color: #677aa5;
+}
+.saiba-mais .icon {
+    position: absolute;
+    top: -57px;
+    left: 100px;
+}
+.saiba-mais .bar-top-v, 
+.saiba-mais .bar-top-h, 
+.saiba-mais .bar-bottom-h, 
+.saiba-mais .bar-bottom-v{
+    background-color: #677aa5;
+}
+
+
+/* saiba mais */
+.na-pratica {
+    position: relative;
+    padding: 0;
+    padding-top: 70px;
+    padding-left: 2px;
+}
+.na-pratica .in {
+    background-color: #dee8f7;
+}
+.na-pratica .txt{
+    color: #005ca8;
+}
+.na-pratica .icon {
+    position: absolute;
+    top: -70px;
+    left: 100px;
+}
+.na-pratica .bar-top-v, 
+.na-pratica .bar-top-h, 
+.na-pratica .bar-bottom-h, 
+.na-pratica .bar-bottom-v{
+    background-color: #005ca8;
+}
+
+
+
+/* destaque */
+.destaque {
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffe5ca;
+}
+.destaque .bar-top-v, 
+.destaque .bar-top-h, 
+.destaque .bar-bottom-h, 
+.destaque .bar-bottom-v{
+    position: absolute;
+    background-color: #f68b29;
+}
+
+/* blue water */
+.blue-water{
+    background: url(../../../assets/images/module/onu.png) var(--PRF_COLOR_MODULE_SOF);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+.blue-water p{
+    color: white;
+}
+.blue-water .bar-top-v, 
+.blue-water .bar-top-h, 
+.blue-water .bar-bottom-h, 
+.blue-water .bar-bottom-v{
+    position: absolute;
+    background-color: var(--COLOR_BLUE_PRF);
+}
+
+
+

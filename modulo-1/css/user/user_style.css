@@ -11,7 +11,11 @@ body {
   padding-top: 0;
   margin-top: 0;
 }
-
+.modulo_1 h3 {
+  padding-left: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
 .cover-mini {
   display: flex;
   align-items: center;  
@@ -566,7 +570,7 @@ div {
   width: 40px;
   height: 100vh;
   background: var(--FF_ONE);
-  z-index: -1;
+  z-index: 0;
 }
 
 .floating-menu.wide {
@@ -997,28 +1001,30 @@ p.fonte {
 
 .sintese {
   width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(217, 0, 89, 0.7) 0%,
-    rgba(230, 43, 134, 0.7) 100%
-  );
+  background: var(--FF_COLOR_OBJETOS-VENTANITA-1);
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 30px;
   padding: 30px;
 }
+.sintese ul li {
+  margin-bottom: 10px;
+}
+.sintese ul li:last-child {
+  margin-bottom: 0;
+}
 .sintese p,
 .sintese ul,
 .sintese ol,
 .sintese span {
-  color: white !important;
+  color: var(--FF_FONT_H) !important;
 }
 
 .modulo_1 .sintese h4 {
-  color: white !important;
+  color: var(--FF_FONT_H) !important;
   font-family: "Barlow", sans-serif;
-  font-weight: normal;
+  font-weight: 600;
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 1.6rem;
