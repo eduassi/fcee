@@ -2,11 +2,12 @@
 
 :root {
   /* AMPARO */
-  --FF_ONE: #665fe1;
-  --FF_TWO: #ad4ef1;
-  --FF_THREE: #e239ca;
-  --FF_FOUR: #ab4eef;
-  --FF_FONT_H: #ab4eef;
+  --FF_ONE:                       #cb4f4c;  
+  --FF_TWO:                       #b0c14d;
+  --FF_THREE:                     #e02028;
+  --FF_FOUR:                      #fa575c; 
+  --FF_FONT_H:                    #222222; 
+  --FF_FONT_COLOR:                #d9525b;
   --COLOR_BG_GRAY: #efeffb;
   --COLOR_BG_GRAY-2: #e4e4e7;
   --COLOR-MODULE-1: #ff3399;
@@ -64,14 +65,19 @@ a:hover {
 .menu-main .background-degrade {
   position: absolute;
   background: var(--FF_FOUR);
-  background-image: url(../assets/grafismo.png),
-    linear-gradient(90deg, var(--COLOR-MODULE-1) 0%, var(--COLOR-MODULE-7) 100%);
-  min-height: 350px;
+  background: url(../assets/bg.svg);
+  background-size: cover !important;
+  min-height: 280px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 100% 0;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
 }
 
 .btn-main-lg,
@@ -82,24 +88,28 @@ a:hover {
   width: calc(100% - 21px);
   min-height: 60px;
   margin: auto 5px;
-  background-color: #ffffff90;
+  background-color: var(--FF_TWO);
   border-radius: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 8px;
   padding-left: 8px;
   color: white;
-  font-size: 1.1rem;
+  font-size: .9rem;
   cursor: pointer;
 }
 
+.menu-main img {
+  max-width: 460px;
+}
+
 .btn-main-lg {
-  color: var(--FF_FONT_H);
-  background-color: rgba(255, 255, 255, 0.8);
+  color: white;
+  background-color: var(--FF_TWO);
 }
 
 .btn-main-md {
-  width: calc(50% - 21px);
+  width: calc(33% - 21px);
   min-height: 90px;
 }
 
@@ -121,7 +131,7 @@ a:hover {
 .right-side {
   display: flex;
   width: 100%;
-  min-height: 350px;
+  min-height: 280px;
   padding: 20px;
   flex-flow: wrap;
   justify-content: space-around;
@@ -132,8 +142,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 280px;
+  max-height: 280px;
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 90px;
@@ -160,7 +170,7 @@ a:hover {
 }
 .module-menu {
   position: relative;
-  width: calc(100vw / 7);
+  width: calc(100vw / 4);
   height: 100%;
 }
 .heart:hover span {
@@ -390,6 +400,10 @@ img.logo{
 @media (max-width: 1199px) {
 }
 @media (max-width: 991px) {
+  html,
+  body {
+    font-size: 16px;
+  }
 }
 @media (max-width: 767px) {
   html,

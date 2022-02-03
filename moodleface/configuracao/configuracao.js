@@ -25,7 +25,7 @@ var links_JSON = {
     },
     ".conteudo-completo": {
       url: "",
-      hidden: true,
+      
     },
     ".certificado": {
       url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134913",
