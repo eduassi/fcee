@@ -292,7 +292,7 @@ a:hover {
 .heart-menu-panel:not(.shadow-menu-heart) {
   position: absolute;
   display: flex;
-  background: var(--COLOR_BG_GRAY);
+  /* background: var(--COLOR_BG_GRAY); */
   flex-flow: column;
   top: calc(80vw / 7);
   opacity: 1;
@@ -370,12 +370,86 @@ a:hover {
   padding: 30px;
 }
 
-.menu-item {
-  padding: 4px 8px;
+/* MODULO 1 */
+.modulo-1 .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
   cursor: pointer;
-  color: var(--FF_FONT_H);
-  border-radius: 10px !important;
+  background: url(../assets/mod-1.svg);
+  background-repeat: no-repeat;  
 }
+.modulo-1 .menu-item:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: url(../assets/mod-1.svg);
+  background-repeat: no-repeat;  
+}
+.modulo-1 .menu-item {
+  height: 120px;  
+}
+/* MODULO 2 */
+.modulo-2 .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: url(../assets/mod-2.svg);
+  background-repeat: no-repeat;  
+}
+.modulo-2 .menu-item:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: url(../assets/mod-2.svg);
+  background-repeat: no-repeat;  
+}
+.modulo-2 .menu-item {
+  height: 120px;  
+}
+/* MODULO 3 */
+.modulo-3 .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: url(../assets/mod-3.svg);
+  background-repeat: no-repeat;  
+}
+.modulo-3 .menu-item:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: url(../assets/mod-3.svg);
+  background-repeat: no-repeat;  
+}
+.modulo-3 .menu-item {
+  height: 120px;  
+}
+
+
 
 .menu-item:hover {
   background: rgb(221, 221, 221);
@@ -427,8 +501,26 @@ img.logo{
 }
 
 @media (max-width: 1199px) {
+  .modulo-1 .menu-item {
+    height: 90px;  
+  }
+  .modulo-2 .menu-item {
+    height: 90px;  
+  }
+  .modulo-3 .menu-item {
+    height: 90px;  
+  }
 }
 @media (max-width: 991px) {
+  .modulo-1 .menu-item {
+    height: 80px;  
+  }
+  .modulo-2 .menu-item {
+    height: 80px;  
+  }
+  .modulo-3 .menu-item {
+    height: 80px;  
+  }
   html,
   body {
     font-size: 16px;

@@ -12,206 +12,67 @@
 var links_JSON = {
   ".menu-do-topo": {
     ".inicie-o-curso": {
-      url: "https://grupos.moodle.ufsc.br/course/view.php?id=2578",
+      url: "https://cursos.fcee-sc.net.br/course/view.php?id=3",
       "new-tab": true,
     },
     ".apresentacao-do-curso": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=133916",
+      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=17",
       "new-tab": true,
     },
     ".guia-de-estudo": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134903",
+      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=10",
       "new-tab": true,
     },
     ".conteudo-completo": {
-      url: "",
-      
-    },
-    ".certificado": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134913",
-      "new-tab": true,
-      hidden: true,
-    },
+      url: "#",
+      "new-tab": true,      
+    }
   },
   ".modulo-1": {
     apresentacao: {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134902/#0",
-      placeholder: "Apresentação",      
+      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=13",
+      placeholder: "Estudo do Conteúdo",      
     },
     unidade1: {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134902/#1",
-      placeholder: "Unidade 1",
+      url: "https://cursos.fcee-sc.net.br/mod/forum/view.php?id=14",
+      placeholder: "Fórum Debate",
     },
     unidade2: {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134902/#2",
-      placeholder: "Unidade 2",
-    },
-    referencias: {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134902/#3",
-      placeholder: "Referências",
-    },
-    avaliacao: {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134904",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
+      url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=15",
+      placeholder: "Atividade Avaliativa",
+    }
   },
   ".modulo-2": {
     "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134896/#0",
-      placeholder: "Apresentação",
+      url: "#",
+      placeholder: "Estudo do Conteúdo",
     },
     "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134896/#1",
-      placeholder: "Unidade 1",
+      url: "#",
+      placeholder: "Fórum Debate",
+      "new-tab": true,  
     },
     "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134896/#2",
-      placeholder: "Unidade 2",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134896/#3",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134905",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
+      url: "#",
+      placeholder: "Atividade Avaliativa",
+      "new-tab": true,  
+    }
   },
   ".modulo-3": {
     "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897",
-      placeholder: "Apresentação",
+      url: "#",
+      placeholder: "Estudo do Conteúdo",
     },
     "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897/1",
-      placeholder: "Unidade 1",
+      url: "#",
+      placeholder: "Fórum Debate",
     },
     "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897/2",
-      placeholder: "Unidade 2",
-    },
-    "unidade-3": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897/3",
-      placeholder: "Unidade 3",
-    },
-    "unidade-4": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897/4",
-      placeholder: "Unidade 4",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134897/5",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134906",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
+      url: "#",
+      placeholder: "Atividade Avaliativa",
+    }
   },
   ".modulo-4": {
-    "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134898",
-      placeholder: "Apresentação",
-    },
-    "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134898/#1",
-      placeholder: "Unidade 1",
-    },
-    "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134898/#2",
-      placeholder: "Unidade 2",
-    },
-    "unidade-3": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134898/#3",
-      placeholder: "Unidade 3",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134898/#4",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134907",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
-  },
-  ".modulo-5": {
-    "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899",
-      placeholder: "Apresentação",
-    },
-    "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899/#1",
-      placeholder: "Unidade 1",
-    },
-    "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899/#2",
-      placeholder: "Unidade 2",
-    },
-    "unidade-3": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899/#3",
-      placeholder: "Unidade 3",
-    },
-    "unidade-4": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899/#4",
-      placeholder: "Unidade 4",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134899/#5",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134908",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
-  },
-  ".modulo-6": {
-    "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134900/#0",
-      placeholder: "Apresentação",
-    },
-    "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134900/#1",
-      placeholder: "Unidade 1",
-    },
-    "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134900/#2",
-      placeholder: "Unidade 2",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134900/#3",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134909",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
-  },
-  ".modulo-7": {
-    "apresentacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134901/#0",
-      placeholder: "Apresentação",
-    },
-    "unidade-1": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134901/#1",
-      placeholder: "Unidade 1",
-    },
-    "unidade-2": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134901/#2",
-      placeholder: "Unidade 2",
-    },
-    "referencias": {
-      url: "https://grupos.moodle.ufsc.br/mod/resource/view.php?id=134901/#3",
-      placeholder: "Referências",
-    },
-    "avaliacao": {
-      url: "https://grupos.moodle.ufsc.br/mod/quiz/view.php?id=134910",
-      placeholder: "Avaliação",
-      "new-tab": true,
-    },
-  },
+    
+  }
 };
