@@ -48,20 +48,31 @@ width: 270px;
 }
 /* custom */
 
-.table thead tr th {
+.modulo_1 .table thead tr th {
   text-align: center;
   background-color: var(--FF_COLOR_OBJETOS-VENTANITA-2);
   color: white;
+  font-size: 1.1rem !important;
 }
-.table thead tr th p{
+.modulo_1 .table tr th p{
+  font-size: 1rem !important;
   color: white;
+}
+.modulo_1 .table tr td {
+  font-size: 1rem !important;
+}
+.modulo_1 .table tr td p{
+  font-size: 1rem !important;
+}
+.modulo_1 .table tr td ul{
+  font-size: 1rem !important;
 }
 
 
 p.legenda {
   margin-top: 10px;
   font-size: .85rem;
-  color: var(--FF_ONE);
+  color: var(--FF_FONT_H);
   text-align: center;
 }
 .pmd-z-depth {
