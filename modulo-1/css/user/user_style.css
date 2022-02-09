@@ -16,7 +16,8 @@ body {
 .sintese-2 {
   position: relative;
   min-height: 450px;
-  background-color: #b0c14d;
+  padding-top: 15px;
+  padding-right: 15px;
 }
 .sintese-2 ul li {
   margin-bottom: 10px;
@@ -30,7 +31,7 @@ body {
 }
 .sintese-2 {
   width: 100%;  
-  background: url(../../assets/images/identity/sintese.png);
+  background: url(../../assets/images/identity/sintese.png) #fafafa;
   background-repeat: repeat-x;
   background-position: 100% 100%;
 }
