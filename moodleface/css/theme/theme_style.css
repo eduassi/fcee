@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Karma:300,400,500,600,700&display=swap');
+
+body{
+    margin-top:70px;
+    overflow-x: hidden;
+}
+body{
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'HelveticaNeueRegular';
+	color:#333;
+	font-weight:  400;
+}
+
+a.box-dest{
+    background:#feb477 !important; 
+    color:#0000ff !important; 
+    font-weight: normal !important; 
+    border: 1px dashed #ff9741 !important;
+    cursor: pointer;
+}
+.nav-bar{
+	position: fixed;
+	z-index: 99;
+	background: #F0FFF0;
+	width: 100%;
+	min-height: 70px;
+	top:0;
+	left:0;
+}
+
+.nav-bar img{
+	margin-top:15px;
+	margin-left:15px;
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 15px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #6B8E23;
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    -webkit-transition: all .4s ease 0s;
+    transition: all .4s ease 0s;
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+    background: #f0fff0;
+    border-left: 1px solid rgba(255,255,255,.1);
+}
+#super-wrapper{
+    overflow: hidden;
+}
+
+header{
+	height: 100vh;
+	background: url(../../assets/images/identity/backgrounds/wall-bg.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	padding: 70px auto;
+	text-align: center;
+	color: #333;
+	font-size: 30px;
+}
+
+
+
+/*flip-card*/
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+	/*left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+    cursor: pointer;
+}
+
+
+/* SAIBA MAIS LINK*/
+.modal-link .saiba-mais {
+	background: #FFF;
+    border-radius: 15px 15px 15px 15px;
+    padding-top: 0px;
+}
+.modal-link .saiba-mais-body {
+	position: relative;
+	padding: 0px 40px 30px 40px;
+	text-align: left;
+}
+.modal-link .saiba-mais-body p {
+	color: #555555;
+}
+.modal-link .titulo-saiba-mais {
+	font-size: 22px;
+	text-align: left;
+	font-family: 'Open Sans', serif;
+	color: #f45f31;
+	font-weight: 500;
+}
+.modal-link .saiba-mais-header {
+	top: 0%;
+	transform: translate(-4%, -30%);
+	margin-bottom: -28px;
+}
+.modal-link .saiba-mais-icone {
+	width: 60px;
+	height: 80px;
+}
+.modal-link .saiba-mais-link {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.modal-link {
+	pointer-events: initial;
+}
+.modal-link .close {
+	margin-top: -30px;
+}
+/* ./SAIBA MAIS LINK*/
+
+/* GLOSSARIO */
+.modal-link .glossario {
+	background: #fff;
+    border-radius: 15px 15px 15px 15px;
+    padding-top: 0;
+}
+.modal-link .glossario-body {
+	position: relative;
+	padding: 15px 40px 30px 40px;
+	text-align: left;
+}
+.modal-link .titulo-glossario {
+	font-size: 22px;
+	text-align: left;
+	font-family: 'Open Sans', serif;
+	color: #132972;
+	font-weight: 500;
+}
+.modal-link .glossario-header {
+	top: 0%;
+	transform: translate(-3%, -20%);
+	margin-bottom: -25px;
+}
+.modal-link .glossario-icone {
+	width: 60px;
+	height: 80px;
+}
+/* FIM GLOSSARIO */
+
+
+
+/* carousel slider */
+.carousel-inner{
+    max-height: 500px
+}
+
+.carousel-indicators li {
+    position: relative;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px !important;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.5);
+  }
+
+
+
+
+.media-combined{
+    margin: auto 15px
+}
+
+
+.bg-green-dark{
+    background: #53760B;
+}
+.bg-primary{
+    background: #6acfaf !important;
+}
+.bg-secondary{
+    background: #ef7628 !important;
+}
+
+.bg-orange{
+    background: #ef7628 !important;
+}
+.color-white{
+    color:white;
+}
+
+.bg-gray{
+    background: #c2c2c2;
+  }
+
+.card{
+    height: 100%;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+header{
+    padding-top:40%;
+}
+
+.box-fluid{
+    background-color:rgba(255, 255, 255, 0.80);
+    padding:15px;
+}
+.box-fluid p{
+    padding:0;
+    margin: 0;
+}
+
+.bg-compatible{
+    background-repeat: no-repeat !important; 
+    background-position: center !important;
+    background-attachment: fixed !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
+/* // Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
+@media (min-width: 576px) { 
+    
+}
+
+/* // Dispositivos médios (tablets com 768px ou mais) */
+@media (min-width: 992px) { 
+    .vertical-center {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      header{
+        padding-top:0;
+    }
+ }
+
+/* // Dispositivos large (desktops com 992px ou mais) */
+@media (min-width: 992px) {
+    
+ }
+
+/* // Dispositivos extra large (desktops grandes com 1200px ou mais) */
+@media (min-width: 1200px) { 
+    
+}
+
+.menu-toggle{
+    right: 40px;
+}

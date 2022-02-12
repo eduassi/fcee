@@ -31,32 +31,26 @@
         "html": "<div class='menu-item bt-wrapper'><div class='menu-u1 unselectable'></div><div class='wide-extra'>Unidade 1</div></div>"
       }
     },
-    {
-      "placeholder": "Unidade 2",
-      "url": "pages/capitulo_2.html",
-      "custom-button": {
-        "html": "<div class='menu-item bt-wrapper'><div class='menu-u2 unselectable'></div><div class='wide-extra'>Unidade 2</div></div>"
-      }
-    },
+    
     {
       "placeholder": "Referências",
-      "url": "pages/capitulo_3.html",
+      "url": "pages/capitulo_2.html",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-referencias unselectable'></div><div class='wide-extra'>Referências</div></div>"
       }
     },
     {
       "placeholder": "PDF",
-      "external-url": "assets/files/amparo-projeto-grafico-online.pdf",
+      "external-url": "assets/files/#",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-pdf unselectable'></div><div class='wide-extra'>Módulo<br>em PDF</div></div>"
       }
     },
     {
       "placeholder": "Voltar ao Curso",
-      "external-url-self": "https://grupos.moodle.ufsc.br/course/view.php?id=2578",
+      "external-url-self": "https://cursos.fcee-sc.net.br/course/view.php?id=3",
       "custom-button": {
-        "html": "<a class='text-break link-menu-float' target='_self' href='https://grupos.moodle.ufsc.br/course/view.php?id=2578'><div class='menu-item bt-wrapper'><div class='menu-home unselectable'></div><div class='wide-extra'>Voltar ao<br>Curso</div></div></a>"
+        "html": "<a class='text-break link-menu-float' target='_self' href='https://cursos.fcee-sc.net.br/course/view.php?id=3'><div class='menu-item bt-wrapper'><div class='menu-home unselectable'></div><div class='wide-extra'>Voltar ao<br>Curso</div></div></a>"
       }
     }
   ]

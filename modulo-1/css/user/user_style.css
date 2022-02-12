@@ -2,21 +2,142 @@ body {
   font-family: "Barlow", sans-serif;
   font-size: 1.2rem;
 }
-
-.marcas {
-  width: 600px;
-  height: 108px;
+.cover {
+  overflow-y: auto;
+  background: url(../../assets/images/identity/bg-body.png) top center;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 0;
+  padding-top: 0;
+  margin-top: 0;
 }
 
-.cover-img {
+/* SÍNTESE */
+.sintese-2 {
+  position: relative;
+  min-height: 450px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+.sintese-2 ul li {
+  margin-bottom: 10px;
+}
+.sintese-2 img {
   position: absolute;
-  top: -140px;
-  right: -140px;
-  width: 500px;
-  height: 516px;
+  bottom: 15px;
+  width: 349px;
+  height: 225px;
+  left: 0;
+}
+.sintese-2 {
+  width: 100%;  
+  background: url(../../assets/images/identity/sintese.png) #fafafa;
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+}
+.sintese-2 .text {
+  padding-left: 264px;
+  padding-bottom: 60px;
+}
+
+/* PRÁTICA DOCENTE */
+.pratica-docente {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pratica-docente .boneca {
+  width: 130px;
+  height: 300px;
+  margin-right: 15px;  
+}
+
+.pratica-docente .box-text {
+  background-color: #d1c4b8;
+  padding: 20px;
+  border-radius: 15px;  
+}
+
+.pratica-docente .box-text .text {
+  background-color: #f5e8de;
+  padding: 20px;
+  width: 100%;
+  height: 100%; 
+}
+
+.pratica-docente .title {
+  font-family: "Barlow Condensed", sans-serif !important;
+    font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modulo_1 h3 {
+  padding-left: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.cover-mini {
+  display: flex;
+  align-items: center;  
+  width: 100%;
+  height: 180px;
+  background: var(--FF_ONE);
+  color: white !important;
+  padding: 20px;
+  border-radius: 30px;
+}
+.cover-mini h1 {
+  color: white !important;
+}
+.cover-mini h1 span {
+  font-weight: 300;
+  font-style: italic;
+}
+.marcas {
+  width: 320px;
+}
+.box-header {
+  width: 470px;
+}
+.cover-image {
+position: absolute;
+top: 0;
+right: 0;
+width: 270px;
+
 }
 /* custom */
 
+.modulo_1 .table thead tr th {
+  text-align: center;
+  background-color: var(--FF_COLOR_OBJETOS-VENTANITA-2);
+  color: white;
+  font-size: 1.1rem !important;
+}
+.modulo_1 .table tr th p{
+  font-size: 1rem !important;
+  color: white;
+}
+.modulo_1 .table tr td {
+  font-size: 1rem !important;
+}
+.modulo_1 .table tr td p{
+  font-size: 1rem !important;
+}
+.modulo_1 .table tr td ul{
+  font-size: 1rem !important;
+}
+
+
+p.legenda {
+  margin-top: 10px;
+  font-size: .85rem;
+  color: var(--FF_FONT_H);
+  text-align: center;
+}
 .pmd-z-depth {
   box-shadow: unset;
 }
@@ -159,15 +280,7 @@ span.answer {
 
 /* ./ HTML5 */
 
-body {
-  overflow-y: auto;
-  background: url(../../assets/images/identity/bg-body.png) top center;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: 0;
-  padding-top: 0;
-  margin-top: 0;
-}
+
 
 .caixa-destaque {
   margin-top: 10px;
@@ -531,7 +644,7 @@ div {
   width: 40px;
   height: 100vh;
   background: var(--FF_ONE);
-  z-index: -1;
+  z-index: 0;
 }
 
 .floating-menu.wide {
@@ -962,28 +1075,30 @@ p.fonte {
 
 .sintese {
   width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(217, 0, 89, 0.7) 0%,
-    rgba(230, 43, 134, 0.7) 100%
-  );
+  background: var(--FF_COLOR_OBJETOS-VENTANITA-1);
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 30px;
   padding: 30px;
 }
+.sintese ul li {
+  margin-bottom: 10px;
+}
+.sintese ul li:last-child {
+  margin-bottom: 0;
+}
 .sintese p,
 .sintese ul,
 .sintese ol,
 .sintese span {
-  color: white !important;
+  color: var(--FF_FONT_H) !important;
 }
 
 .modulo_1 .sintese h4 {
-  color: white !important;
+  color: var(--FF_FONT_H) !important;
   font-family: "Barlow", sans-serif;
-  font-weight: normal;
+  font-weight: 600;
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 1.6rem;
@@ -1044,8 +1159,9 @@ p.fonte {
 
 /* VÍDEO */
 .video-player {
-  background: var(--FF_FONT_H) !important;
-  border-radius: 5px;
+  background: var(--FF_COLOR_OBJETOS-1) !important;
+  border-radius: 10px !important;
+  padding: 20px !important;
 }
 .video-player div {
   background: unset !important;
@@ -1568,13 +1684,12 @@ a.link-glossario:hover {
   border-radius: 10px;
 }
 
-
 /* JESUS SLIDE */
 .modulo_1 .jesus_slider_no_arrow_image_background .slide_ball {
-  background: var(--FF_COLOR_OBJETOS-3);
+  background: unset;
   background-size: unset;
   border-color: var(--FF_COLOR_OBJETOS-4);
-  border: 3px solid var(--FF_COLOR_OBJETOS-4) !important;
+  border: unset !important;
   color: var(--FF_COLOR_OBJETOS-5);
   font-family: "Barlow", sans-serif !important;
   font-weight: 800 !important;
@@ -1582,7 +1697,7 @@ a.link-glossario:hover {
   font-style: normal;
 }
 .modulo_1 .jesus_slider_no_arrow_image_background .active .slide_ball {
-  background: var(--FF_COLOR_OBJETOS-3);
+  background: unset;
   background-size: unset;
   color: var(--FF_COLOR_OBJETOS-5);
   font-size: 3rem;
@@ -1598,8 +1713,15 @@ a.link-glossario:hover {
   border: 3px solid var(--FF_COLOR_OBJETOS-4) !important;
   border-radius: 10px;
 }
-
-
+.jesus-set {
+  height: 6.8em;
+  width: 6em;
+  display: flex;
+  float: left;
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+}
 
 /* TAB  */
 
@@ -1651,15 +1773,16 @@ a.link-glossario:hover {
 
 .tab-content {
   background-color: white !important;
-  color: var(--FF_FONT_H)!important;
+  color: var(--FF_FONT_H) !important;
   padding: 20px;
   border: 3px solid VAR(--FF_COLOR_OBJETOS-TAB-2);
   border-radius: 30px;
 }
-.tab-content p, .tab-content ul li, .tab-content ol li {
+.tab-content p,
+.tab-content ul li,
+.tab-content ol li {
   color: var(--FF_FONT_H);
 }
-
 
 /* FLIPSTER */
 .modulo_1 .flipster_slide {
@@ -1677,7 +1800,6 @@ a.link-glossario:hover {
   border-radius: 20px;
 }
 
-
 /* FLIPCARD */
 .modulo_1 .flip-card-front {
   border: unset;
@@ -1685,12 +1807,6 @@ a.link-glossario:hover {
 .modulo_1 .flip-card-back {
   border: 3pt solid var(--FF_COLOR_OBJETOS-4);
 }
-
-
-
-
-
-
 
 /* ******************************************************************************** */
 /* ******************************************************************************** */
@@ -1735,6 +1851,9 @@ a.link-glossario:hover {
   body {
     font-size: 16px;
   }
+  body {
+    margin-top: 0;
+}
   .container {
     max-width: 650px;
   }
@@ -1778,13 +1897,50 @@ a.link-glossario:hover {
   body {
     font-size: 15px;
   }
-  body {
+  .cover {
     background: url(../../assets/images/identity/bg-body-mob.png) top center;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 0;
     padding-top: 0;
     margin-top: 0;
+  }
+
+  .sintese-2 .text {
+    padding-left: 0;
+    padding-bottom: 250px;
+  }
+  .pratica-docente {
+    width: 100%;
+  }
+  .pratica-docente .boneca {
+    display: none;
+  }
+  .transcricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    height: 56px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 4px;
+  
+}
+  .floating-menu {
+    margin-left: 0;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    background-size: 30px 30px;
+}
+.box-header {
+  width: 290px;
+}
+  .container {
+    max-width: 737px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .saiba-mais .sm {
     position: relative;
@@ -1910,7 +2066,21 @@ a.link-glossario:hover {
   .green-audio-player .controls span {
     display: none;
   }
+  .transcricao {
+    width: 230px;  
+}
 
+
+.green-audio-player {
+    width: 230px;
+    min-width: 230px;
+}
+
+  .container {
+    max-width: 545px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .cover-title {
     right: 60px;
     width: unset;
@@ -1957,11 +2127,7 @@ a.link-glossario:hover {
     padding-right: 0;
   }
 
-  .citacao div p {
-    font-family: "Marta";
-    font-weight: bold;
-    color: var(--FF_FONT_H);
-  }
+
 
   .caixa-destaque {
     padding: 30px 20px 0px 20px;
@@ -2004,9 +2170,19 @@ a.link-glossario:hover {
   .cover-title {
     padding: 5px;
   }
+  .container {
+    max-width: 384px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 @media (max-width: 360px) {
+  .container {
+    max-width: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .flipster_carousel_slides {
     margin-left: 9vw;
   }
@@ -2025,6 +2201,11 @@ a.link-glossario:hover {
 }
 
 @media (max-width: 320px) {
+  .container {
+    max-width: 290px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .flipster_carousel_slides {
     margin-left: 2vw;
   }

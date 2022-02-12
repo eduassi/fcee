@@ -1,0 +1,111 @@
+.box-interno{
+    margin:0;
+    padding:0 3em;
+}
+
+.box-interno p {
+    margin: 0;
+}
+
+.box-interno h5{
+    margin-bottom:10px;
+}
+
+.box {
+    background-size: 100%;
+    background-repeat: repeat-y;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 0;
+}
+
+.box:before {
+    content: "";
+    height: 125px;
+    width: 100%;
+    position: absolute;
+    top: -124px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.box:after {
+    content: "";
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: -39px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+/* CORES BOXES MODULO 1*/
+.modulo_1 .box {
+    background-image: url(../../../assets/images/module_1/svg/box-middle-m1.svg);
+}
+.modulo_1 .box:after {
+    background-image: url(../../../assets/images/module_1/svg/box-bottom-m1.svg);
+}
+.modulo_1 .box.box-saiba-mais:before {
+    background-image: url(../../../assets/images/module_1/svg/box-top-m1-saiba.svg);
+}
+.modulo_1 .box.box-acesse:before {
+    background-image: url(../../../assets/images/module_1/svg/box-top-m1-acesse.svg);
+}
+.modulo_1 .box.box-vocabulario:before {
+    background-image: url(../../../assets/images/module_1/svg/box-top-m1-vocabulario.svg);
+}
+
+/* CORES BOXES MODULO 2*/
+.modulo_2 .box {
+    background-image: url(../../../assets/images/module_2/svg/box-middle-m2.svg);
+}
+.modulo_2 .box:after {
+    background-image: url(../../../assets/images/module_2/svg/box-bottom-m2.svg);
+}
+.modulo_2 .box.box-saiba-mais:before {
+    background-image: url(../../../assets/images/module_2/svg/box-top-m2-saiba.svg);
+}
+.modulo_2 .box.box-acesse:before {
+    background-image: url(../../../assets/images/module_2/svg/box-top-m2-acesse.svg);
+}
+.modulo_2 .box.box-vocabulario:before {
+    background-image: url(../../../assets/images/module_2/svg/box-top-m2-vocabulario.svg);
+}
+
+/* CORES BOXES MODULO 3*/
+.modulo_3 .box {
+    background-image: url(../../../assets/images/module_3/svg/box-middle-m3.svg);
+}
+.modulo_3 .box:after {
+    background-image: url(../../../assets/images/module_3/svg/box-bottom-m3.svg);
+}
+.modulo_3 .box.box-saiba-mais:before {
+    background-image: url(../../../assets/images/module_3/svg/box-top-m3-saiba.svg);
+}
+.modulo_3 .box.box-acesse:before {
+    background-image: url(../../../assets/images/module_3/svg/box-top-m3-acesse.svg);
+}
+.modulo_3 .box.box-vocabulario:before {
+    background-image: url(../../../assets/images/module_3/svg/box-top-m3-vocabulario.svg);
+}
+
+/* CORES BOXES MODULO 4*/
+.modulo_4 .box {
+    background-image: url(../../../assets/images/module_4/svg/box-middle-m4.svg);
+}
+.modulo_4 .box:after {
+    background-image: url(../../../assets/images/module_4/svg/box-bottom-m4.svg);
+}
+.modulo_4 .box.box-saiba-mais:before {
+    background-image: url(../../../assets/images/module_4/svg/box-top-m4-saiba.svg);
+}
+.modulo_4 .box.box-acesse:before {
+    background-image: url(../../../assets/images/module_4/svg/box-top-m4-acesse.svg);
+}
+.modulo_4 .box.box-vocabulario:before {
+    background-image: url(../../../assets/images/module_4/svg/box-top-m4-vocabulario.svg);
+}
