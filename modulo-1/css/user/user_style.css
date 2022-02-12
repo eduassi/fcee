@@ -2127,11 +2127,7 @@ a.link-glossario:hover {
     padding-right: 0;
   }
 
-  .citacao div p {
-    font-family: "Marta";
-    font-weight: bold;
-    color: var(--FF_FONT_H);
-  }
+
 
   .caixa-destaque {
     padding: 30px 20px 0px 20px;
