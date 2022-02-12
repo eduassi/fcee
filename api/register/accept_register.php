@@ -28,6 +28,8 @@ try {
     $table_abstraction = new Register($db);
 
     $table_abstraction->id = $data->id;
+    $table_abstraction->nome = $data->nome;
+    $table_abstraction->email = $data->email;
 
 
     $query_result = $table_abstraction->accept_register();
@@ -35,7 +37,7 @@ try {
     if (
         $query_result
     ) {
-        // send_email($table_abstraction->getName(), $table_abstraction->getEmail());
+        send_approval_email($table_abstraction->getName(), $table_abstraction->getEmail());
 
         $response = array("message" => getMessage("genericSuccess"));
         http_response_code(201);

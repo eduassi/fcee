@@ -130,7 +130,7 @@ var set_button = function () {
           } else {
             form.append(el.id, el.value);
           }
-        } else {
+        } else if (!$(el).hasClass("opcional")) {
           ready_to_send = false;
           let warning_message = $(el).parent().find("#warning-message");
           if (!$(warning_message).length) {
@@ -144,6 +144,8 @@ var set_button = function () {
           } else {
             $(warning_message).fadeIn();
           }
+        } else {
+          form.append(el.id, "");
         }
       } else if (el.id != "doc-com-foto" || el.id != "doc-vinculo") {
         let file_attached = el.files[0];

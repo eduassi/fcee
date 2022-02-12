@@ -27,6 +27,7 @@ class Register
     private $sexo;
     private $estado;
     private $atuacao;
+    private $instituicaoAtuacao;
 
     private $documentoFoto;
     private $documentoVinculo;
@@ -50,7 +51,7 @@ class Register
                 case "nome":
                 case "orgaoEmissor":
                 case "curso":
-                    $value =  preg_replace("/[^a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]/", "", $value);
+                    $value =  preg_replace("/[^a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ\s]/", "", $value);
                     $value = ucwords($value);
                     break;
                 case "rg":
@@ -87,7 +88,11 @@ class Register
             if (empty($value)) {
                 $value = NULL;
             }
-            $this->$property = $value;
+            if ($property != "email" && $property != "documentoFoto" && $property != "documentoVinculo") {
+                $this->$property = mb_convert_case($value, MB_CASE_UPPER, 'UTF-8');
+            }else{
+                $this->$property = $value;
+            }
         }
     }
 
@@ -106,9 +111,22 @@ class Register
         return $this->email;
     }
 
+    public function get_accepted_registers_to_csv()
+    {
+        $query = "SELECT REPLACE(REPLACE(cpf, '.', ''), '-', '') AS username, LEFT(nome,  POSITION(' ' IN nome)-1) AS firstname,  TRIM(RIGHT(nome, LENGTH(nome) - POSITION(' ' IN nome))) AS lastname, email AS email, cpf AS profile_field_CPF FROM registro WHERE homologado='1'";
+
+        $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
     public function get_pending_registers()
     {
-        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado IS NULL ORDER BY dataRegistro ASC";
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, instituicaoAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado IS NULL ORDER BY dataRegistro ASC";
 
         $stmt = $this->conn->prepare($query);
 
@@ -121,7 +139,7 @@ class Register
 
     public function get_accepted_registers()
     {
-        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='1' ORDER BY dataRegistro ASC";
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, instituicaoAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='1' ORDER BY dataRegistro ASC";
 
         $stmt = $this->conn->prepare($query);
 
@@ -134,7 +152,7 @@ class Register
 
     public function get_rejected_registers()
     {
-        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='0' ORDER BY dataRegistro ASC";
+        $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, instituicaoAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado='0' ORDER BY dataRegistro ASC";
 
         $stmt = $this->conn->prepare($query);
 
@@ -175,10 +193,105 @@ class Register
         return false;
     }
 
+    public function edit_approve_register()
+    {
+        // query to insert record
+        $query = "UPDATE registro SET 
+            nome = :nome, orgaoEmissor = :orgaoEmissor,curso = :curso, municipioReside = :municipioReside, localAtuacao = :localAtuacao, cpf = :cpf, rg = :rg, matricula = :matricula, email = :email, ddd = :ddd, telefone = :telefone, sexo = :sexo, estado = :estado, atuacao = :atuacao, instituicaoAtuacao = :instituicaoAtuacao, homologado=1 WHERE id = :id
+        ";
+
+
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":id", $this->id);
+        $stmt->bindParam(":nome", $this->nome);
+        $stmt->bindParam(":orgaoEmissor", $this->orgaoEmissor);
+        $stmt->bindParam(":curso", $this->curso);
+        $stmt->bindParam(":municipioReside", $this->municipioReside);
+        $stmt->bindParam(":localAtuacao", $this->localAtuacao);
+        $stmt->bindParam(":cpf", $this->cpf);
+        $stmt->bindParam(":rg", $this->rg);
+        $stmt->bindParam(":matricula", $this->matricula);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":ddd", $this->ddd);
+        $stmt->bindParam(":telefone", $this->telefone);
+        $stmt->bindParam(":sexo", $this->sexo);
+        $stmt->bindParam(":estado", $this->estado);
+        $stmt->bindParam(":atuacao", $this->atuacao);
+        $stmt->bindParam(":instituicaoAtuacao", $this->instituicaoAtuacao);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    
+    public function update_all_approve_register()
+    {
+        // query to insert record
+        $query = "UPDATE registro SET nome = :nome, orgaoEmissor = :orgaoEmissor,curso = :curso, municipioReside = :municipioReside, localAtuacao = :localAtuacao, cpf = :cpf, rg = :rg, matricula = :matricula, email = :email, ddd = :ddd, telefone = :telefone, sexo = :sexo, estado = :estado, atuacao = :atuacao, instituicaoAtuacao = :instituicaoAtuacao, documentoFoto = :documentoFoto, documentoVinculo = :documentoVinculo, homologado=1 WHERE id = :id
+     ";
+
+
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":id", $this->id);
+        $stmt->bindParam(":nome", $this->nome);
+        $stmt->bindParam(":orgaoEmissor", $this->orgaoEmissor);
+        $stmt->bindParam(":curso", $this->curso);
+        $stmt->bindParam(":municipioReside", $this->municipioReside);
+        $stmt->bindParam(":localAtuacao", $this->localAtuacao);
+        $stmt->bindParam(":cpf", $this->cpf);
+        $stmt->bindParam(":rg", $this->rg);
+        $stmt->bindParam(":matricula", $this->matricula);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":ddd", $this->ddd);
+        $stmt->bindParam(":telefone", $this->telefone);
+        $stmt->bindParam(":sexo", $this->sexo);
+        $stmt->bindParam(":estado", $this->estado);
+        $stmt->bindParam(":atuacao", $this->atuacao);
+        $stmt->bindParam(":instituicaoAtuacao", $this->instituicaoAtuacao);
+        $stmt->bindParam(":documentoFoto", $this->documentoFoto);
+        $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public function update_files_approve_register()
+    {
+        // query to insert record
+        $query = "UPDATE registro SET 
+        documentoFoto = :documentoFoto, documentoVinculo = :documentoVinculo, homologado=0 WHERE id = :id
+     ";
+
+
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":id", $this->id);
+        $stmt->bindParam(":documentoFoto", $this->documentoFoto);
+        $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
     public function new_register()
     {
         // query to insert record
-        $query = "INSERT INTO registro (nome, orgaoEmissor, curso, municipioReside, localAtuacao, cpf, rg, matricula, email, ddd, telefone, sexo, estado, atuacao, documentoFoto, documentoVinculo) VALUES (:nome, :orgaoEmissor, :curso, :municipioReside, :localAtuacao, :cpf, :rg, :matricula, :email, :ddd, :telefone, :sexo, :estado, :atuacao, :documentoFoto, :documentoVinculo)";
+        $query = "INSERT INTO registro (nome, orgaoEmissor, curso, municipioReside, localAtuacao, cpf, rg, matricula, email, ddd, telefone, sexo, estado, atuacao, instituicaoAtuacao, documentoFoto, documentoVinculo) VALUES (:nome, :orgaoEmissor, :curso, :municipioReside, :localAtuacao, :cpf, :rg, :matricula, :email, :ddd, :telefone, :sexo, :estado, :atuacao, :instituicaoAtuacao, :documentoFoto, :documentoVinculo)";
 
 
         // prepare query
@@ -198,8 +311,10 @@ class Register
         $stmt->bindParam(":sexo", $this->sexo);
         $stmt->bindParam(":estado", $this->estado);
         $stmt->bindParam(":atuacao", $this->atuacao);
+        $stmt->bindParam(":instituicaoAtuacao", $this->instituicaoAtuacao);
         $stmt->bindParam(":documentoFoto", $this->documentoFoto);
         $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
+
 
         try {
             if ($stmt->execute()) {
@@ -208,7 +323,6 @@ class Register
             return [false, getMessage("genericFailure")];
         } catch (Exception $e) {
             $message = "";
-            echo var_dump($e);
             if (strpos($e->getMessage(), "Duplicate") && strpos($e->getMessage(), "cpf")) {
                 $message = "CPF já existe na base de dados! Caso não tenha feito cadastro, entre em contato conosco!";
             } else {

@@ -1,0 +1,23 @@
+:root {
+  --THEME_FONT_COLOR: black;
+  --THEME_FONT_COLOR_ALTERNATIVE: #bc1d24;
+  --THEME_FONT_COLOR_DARK: #bc1d24;
+  --THEME_COLOR_TITLE_DARK: #bc1d24;
+  --THEME_COLOR_PRIMARY_LIGHT: #bc1d24;
+  --THEME_COLOR_PRIMARY_DARK: #bc1d24;
+  --DISABLED_COLOR: #555555;
+
+  --FF_ONE_TRANSPARENT: #f3ecaaa0;
+  --FF_ONE: #f3ecaa;
+  --FF_TWO: #bbbe33;
+  --FF_THREE: #cb4f4c;
+  --FF_FOUR: #f7534f;
+  --FF_FIVE: #fffcdb;
+  --FF_SIX: #fdd9c0;
+  --FF_FONT_H: #fff;
+  --COLOR_BG_GRAY: #efeffb;
+  --COLOR_BG_GRAY-2: #e4e4e7;
+  --FF_FOUR_60_PERCENT: #ffffff60;
+  --COLOR-MODULE-2-95: #ffffff95;
+  --COLOR-FONT: #000000;
+}

@@ -26,3 +26,5 @@ $COMPROVATION_DOCUMENT_NAME = "documento-comprovacao-vinculo";
 /// PATHS
 $LOCAL_URL = "../..";
 $FILES_PATH = $BASE_URL . "documents/";
+
+$CSV_FILE_NAME = "inscricoes.csv";

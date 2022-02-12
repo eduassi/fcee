@@ -54,6 +54,7 @@ if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo",
         $table_abstraction->sexo = $_POST["sexo"];
         $table_abstraction->estado = $_POST["estado"];
         $table_abstraction->atuacao = $_POST["atuacao"];
+        $table_abstraction->instituicaoAtuacao = $_POST["instituicao-atuacao"];
         $table_abstraction->documentoFoto = $doc_foto_ext;
         $table_abstraction->documentoVinculo = $doc_vinculo_ext;
 
