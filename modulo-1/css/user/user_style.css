@@ -131,6 +131,44 @@ width: 270px;
   font-size: 1rem !important;
 }
 
+.vert-table p, .vert-table ul {
+  font-size: 1rem;
+}
+.vert-table .table-title {
+  background-color: var(--FF_COLOR_OBJETOS-VENTANITA-2);
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  border:  1px solid #c8c8c8;
+  border-top: none;
+}
+.vert-table .table-title p{
+  font-weight: bold;
+  color: white;
+}
+.vert-table .table-title p{
+  margin-bottom: 0;
+}
+.vert-table .table-title:first-child {
+  border:  1px solid #c8c8c8;
+}
+.table-color-1 {  
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  border-top: none;
+}
+.table-color-2 {
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  border-top: none;
+}
+.table-color-3 {
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  border-top: none;
+}
+
+
 
 p.legenda {
   margin-top: 10px;
@@ -198,6 +236,10 @@ p.legenda {
 .modulo_1 h2 {
   font-weight: 700;
   font-size: 1.5rem;
+  color: var(--FF_THREE) !important;
+}
+.modulo_1 h3 {
+  color: var(--FF_THREE) !important;
 }
 
 .bg-radial-cursos {
@@ -391,6 +433,8 @@ section {
   margin-bottom: 0;
   font-style: italic;
   font-weight: 400;
+  background: #f5f8f0;
+  padding: 15px;
 }
 
 /* NOVO */
@@ -437,8 +481,8 @@ h4.modal-title {
   color: white !important;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: normal;
+  font-family: "Barlow", sans-serif !important;
+  font-weight: bold;
 }
 
 /* novo */
@@ -1141,20 +1185,20 @@ p.fonte {
   max-width: unset;
   width: 100%;
   height: auto;
-  background-image: url(../../assets/images/identity/icon/icone_citacao1.svg);
+  background: url(../../assets/images/identity/icon/icone_citacao1.svg);
   background-position: 0 0;
   background-size: 45px 47px;
   background-repeat: no-repeat;
   border: none;
-  padding-left: 20px;
+  padding-left: 35px;
 }
 
 .citacao div {
-  background-image: url(../../assets/images/identity/icon/icone_citacao2.svg);
+  background: url(../../assets/images/identity/icon/icone_citacao2.svg) ;
   background-position: 100% 100%;
   background-size: 45px 47px;
   background-repeat: no-repeat;
-  padding-right: 30px;
+  padding-right: 48px;
 }
 
 /* VÍDEO */
@@ -1880,7 +1924,7 @@ a.link-glossario:hover {
     background-size: 40px 48px;
     background-repeat: no-repeat;
     border: none;
-    padding-left: 0;
+    padding-left: 30px;
   }
 
   .citacao div {
@@ -1888,7 +1932,7 @@ a.link-glossario:hover {
     background-position: 100% 100%;
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    padding-right: 0;
+    padding-right: 45px;
   }
 }
 
@@ -2116,7 +2160,7 @@ a.link-glossario:hover {
     background-size: 25px 38px;
     background-repeat: no-repeat;
     border: none;
-    padding-left: 0;
+    padding-left: 12px;
   }
 
   .citacao div {
@@ -2124,7 +2168,7 @@ a.link-glossario:hover {
     background-position: 100% 100%;
     background-size: 25px 25px;
     background-repeat: no-repeat;
-    padding-right: 0;
+    padding-right: 27px;
   }
 
 
