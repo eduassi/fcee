@@ -41,7 +41,8 @@
     },
     {
       "placeholder": "PDF",
-      "external-url": "assets/files/#",
+      "download-url": "assets/files/pdf-1.pdf",
+      "file-name": "pdf-1.pdf",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-pdf unselectable'></div><div class='wide-extra'>Módulo<br>em PDF</div></div>"
       }

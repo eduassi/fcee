@@ -94,6 +94,8 @@ $(document).ready(function () {
         }
         if ("external-url" in pages[i]) {
           $(new_button_template).addClass("external-url");
+        } else if ("download-url" in pages[i]) {
+          $(new_button_template).addClass("download-url");
         } else {
           $(new_button_template).addClass("linker");
           $(new_button_template).attr("linker", pages[i]["url"]);
@@ -129,11 +131,11 @@ $(document).ready(function () {
       let index_number = Number($(element).attr("index"));
       let this_level = Number(index_number + min_level); // ADJUST OFFSET
       let new_url = pages[this_level]["url"];
-      $(element).on("click", function () {  
+      $(element).on("click", function () {
         current_level = this_level;
         // menu_page_loader(new_url);
         $(".menu-footer")
-          .find(".text-item[page-index = " + (current_level) + "]")
+          .find(".text-item[page-index = " + current_level + "]")
           .click();
       });
     });
@@ -144,6 +146,22 @@ $(document).ready(function () {
       let external_url = pages[this_level]["external-url"];
       $(element).on("click", function () {
         window.open(external_url, "_blank");
+      });
+    });
+
+    $.each($(".download-url"), function (index, element) {
+      let download_button = document.createElement("a");
+      let index_number = Number($(element).attr("index"));
+      let this_level = Number(index_number + min_level);
+      let external_url = pages[this_level]["download-url"];
+      let filename = pages[this_level]["file-name"];
+
+      download_button.setAttribute("href", external_url);
+      download_button.setAttribute("download", filename);
+      download_button.style.display = "none";
+      document.body.appendChild(download_button);
+      $(element).on("click", function () {
+        download_button.click();
       });
     });
 

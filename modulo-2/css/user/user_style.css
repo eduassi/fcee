@@ -100,7 +100,7 @@ body {
   width: 320px;
 }
 .box-header {
-  width: 470px;
+  width: 620px;
 }
 .cover-image {
 position: absolute;
@@ -661,7 +661,7 @@ div {
   margin-left: 5px;
   left: 0;
   width: 90px;
-  height: 430px;
+  height: 460px;
   background: var(--FF_ONE);
   z-index: 1000;
   padding: 10px;
@@ -1901,6 +1901,9 @@ a.link-glossario:hover {
   .container {
     max-width: 650px;
   }
+  .box-header {
+    max-width: 520px;
+}
 
   /* cover */
   .cover-box-logo {
@@ -1941,6 +1944,10 @@ a.link-glossario:hover {
   body {
     font-size: 15px;
   }
+  .box-header {
+    max-width: 580px;
+}
+
   .cover {
     background: url(../../assets/images/identity/bg-body-mob.png) top center;
     background-repeat: no-repeat;

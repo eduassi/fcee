@@ -33,10 +33,7 @@ var links_JSON = {
       url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=13",
       placeholder: "Estudo do Conteúdo",      
     },
-    unidade1: {
-      url: "https://cursos.fcee-sc.net.br/mod/forum/view.php?id=14",
-      placeholder: "Fórum Debate",
-    },
+    
     unidade2: {
       url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=15",
       placeholder: "Atividade Avaliativa",
@@ -47,11 +44,7 @@ var links_JSON = {
       url: "#",
       placeholder: "Estudo do Conteúdo",
     },
-    "unidade-1": {
-      url: "#",
-      placeholder: "Fórum Debate",
-      "new-tab": true,  
-    },
+    
     "unidade-2": {
       url: "#",
       placeholder: "Atividade Avaliativa",
@@ -63,10 +56,7 @@ var links_JSON = {
       url: "#",
       placeholder: "Estudo do Conteúdo",
     },
-    "unidade-1": {
-      url: "#",
-      placeholder: "Fórum Debate",
-    },
+   
     "unidade-2": {
       url: "#",
       placeholder: "Atividade Avaliativa",
