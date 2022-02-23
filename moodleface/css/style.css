@@ -500,6 +500,14 @@ img.logo{
   max-width: 240px;
 }
 
+.brand-bar {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* flex-direction: column; */
+}
+
 @media (max-width: 1199px) {
   .modulo-1 .menu-item {
     height: 90px;  
@@ -512,6 +520,13 @@ img.logo{
   }
 }
 @media (max-width: 991px) {
+  .brand-bar {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
   .modulo-1 .menu-item {
     height: 80px;  
   }

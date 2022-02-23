@@ -41,8 +41,8 @@
     },
     {
       "placeholder": "PDF",
-      "download-url": "assets/files/pdf-1.pdf",
-      "file-name": "pdf-1.pdf",
+      "download-url": "assets/files/M1_FCEE.pdf",
+      "file-name": "M1_FCEE.pdf",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-pdf unselectable'></div><div class='wide-extra'>Módulo<br>em PDF</div></div>"
       }
