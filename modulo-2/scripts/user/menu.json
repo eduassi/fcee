@@ -62,9 +62,9 @@
     },
     {
       "placeholder": "Voltar ao Curso",
-      "external-url-self": "https://grupos.moodle.ufsc.br/course/view.php?id=2578",
+      "external-url-self": "https://cursos.fcee-sc.net.br/course/view.php?id=3",
       "custom-button": {
-        "html": "<a class='text-break link-menu-float' target='_self' href='https://grupos.moodle.ufsc.br/course/view.php?id=2578'><div class='menu-item bt-wrapper'><div class='menu-home unselectable'></div><div class='wide-extra'>Voltar ao<br>Curso</div></div></a>"
+        "html": "<a class='text-break link-menu-float' target='_self' href='https://cursos.fcee-sc.net.br/course/view.php?id=3'><div class='menu-item bt-wrapper'><div class='menu-home unselectable'></div><div class='wide-extra'>Voltar ao<br>Curso</div></div></a>"
       }
     }
   ]
