@@ -2,6 +2,9 @@ body {
   font-family: "Barlow", sans-serif;
   font-size: 1.2rem;
 }
+ul {
+  list-style-image: url('../../assets/images/identity/bullet.png');
+}
 .cover {
   overflow-y: auto;
   background: url(../../assets/images/identity/bg-body.png) top center;
@@ -10,6 +13,20 @@ body {
   background-position-y: 0;
   padding-top: 0;
   margin-top: 0;
+}
+
+.modulo_1 .ventanitas-img .ventanita-show {
+  width: 162px;
+  border: 3pt solid var(--FF_COLOR_OBJETOS-VENTANITA-3) !important;
+  color: var(--FF_FONT_H) !important;
+  background: var(--FF_COLOR_OBJETOS-VENTANITA-2) !important;
+}
+
+.modulo_1 .ventanita-box-img {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* SÍNTESE */
