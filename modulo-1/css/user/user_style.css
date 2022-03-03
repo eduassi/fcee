@@ -15,6 +15,19 @@ ul {
   margin-top: 0;
 }
 
+.flex-down {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+
+.ilustra {
+  max-width: 140px;
+  position: relative; 
+}
+
 /* SÍNTESE */
 .sintese-2 {
   position: relative;
@@ -1940,6 +1953,10 @@ a.link-glossario:hover {
 }
 
 @media (max-width: 767px) {
+  .flex-down {
+    display: flex;
+    justify-content: center;
+  }
   html,
   body {
     font-size: 15px;
