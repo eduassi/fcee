@@ -652,7 +652,14 @@ section {
 h4.modal-title {
   margin-top: 0 !important;
 }
-
+.box-destque {
+  display: block;
+  border: 2px solid var(--FF_TWO);
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  margin-top: 45px;
+}
 .modulo_1 .accordion .card-header.collapsed {
   background-color: var(--FF_FONT_H);
   background-image: url(../../assets/images/identity/icon/arrow-l.png);
@@ -1617,6 +1624,10 @@ p.fonte {
 
 
 @media (max-width: 767px) {
+
+  .box-destque {
+width: 90%;
+  }
   html,
   body {
     font-size: 15px;
