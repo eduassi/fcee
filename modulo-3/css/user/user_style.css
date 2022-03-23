@@ -1132,6 +1132,15 @@ table th {
   margin-bottom: 15px;
 }
 
+.modulo_1 h4 {
+  color: var(--FF_THREE) !important;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .modulo_1 .saiba-mais h4 {
   font-family: "Marta";
   font-style: italic;
