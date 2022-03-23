@@ -1,8 +1,8 @@
 ﻿{
   "information": {
     "modulo-numero": "Nódulos",
-    "modulo-resumido": "M1",
-    "modulo-nome": "Módulo 1"
+    "modulo-resumido": "M3",
+    "modulo-nome": "Módulo 3"
   },
   "configuration": {
     "custom-menu": true,
@@ -75,8 +75,8 @@
     },    
     {
       "placeholder": "PDF",
-      "download-url": "assets/files/pdf-2.pdf",
-      "file-name": "pdf-2.pdf",
+      "download-url": "assets/files/pdf-3.pdf",
+      "file-name": "pdf-3.pdf",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-pdf unselectable'></div><div class='wide-extra'>Módulo<br>em PDF</div></div>"
       }
