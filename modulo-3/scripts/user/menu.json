@@ -12,7 +12,7 @@
     },
     "target": "#menu_item_list",
     "start-level": 0,
-    "max-level": 6,
+    "max-level": 9,
     "min-level": 0,
     "prefix-name": "pages/capitulo_"
   },
@@ -46,8 +46,29 @@
       }
     },
     {
-      "placeholder": "Referências",
+      "placeholder": "Unidade 4",
       "url": "pages/capitulo_4.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u4 unselectable'></div><div class='wide-extra'>Unidade 4</div></div>"
+      }
+    },
+    {
+      "placeholder": "Unidade 5",
+      "url": "pages/capitulo_5.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u5 unselectable'></div><div class='wide-extra'>Unidade 5</div></div>"
+      }
+    },
+    {
+      "placeholder": "Unidade 6",
+      "url": "pages/capitulo_6.html",
+      "custom-button": {
+        "html": "<div class='menu-item bt-wrapper'><div class='menu-u6 unselectable'></div><div class='wide-extra'>Unidade 6</div></div>"
+      }
+    },
+    {
+      "placeholder": "Referências",
+      "url": "pages/capitulo_7.html",
       "custom-button": {
         "html": "<div class='menu-item bt-wrapper'><div class='menu-referencias unselectable'></div><div class='wide-extra'>Referências</div></div>"
       }

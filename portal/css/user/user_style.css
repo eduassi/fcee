@@ -1035,26 +1035,17 @@ div {
   background: url(../../assets/images/identity/icon/menu_unidade4_active.svg);
   background-size: cover;
 }
+
 .menu-u5 {
   background: url(../../assets/images/identity/icon/menu_unidade5.svg);
   background-size: cover;
 }
-
 .menu-item.active .menu-u5,
 .menu-item:hover .menu-u5 {
   background: url(../../assets/images/identity/icon/menu_unidade5_active.svg);
   background-size: cover;
 }
 
-.menu-u6 {
-  background: url(../../assets/images/identity/icon/menu_unidade6.svg);
-  background-size: cover;
-}
-.menu-item.active .menu-u6,
-.menu-item:hover .menu-u6 {
-  background: url(../../assets/images/identity/icon/menu_unidade6_active.svg);
-  background-size: cover;
-}
 
 .menu-pdf {
   background: url(../../assets/images/identity/icon/menu_pdf.svg);

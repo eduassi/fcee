@@ -15,6 +15,11 @@ ul {
   margin-top: 0;
 }
 
+.text-area .text-item {
+  font-display: block;
+  font-size: 1rem;
+}
+
 .modulo_1 .ventanitas-img .ventanita-show {
   width: 162px;
   border: 3pt solid var(--FF_COLOR_OBJETOS-VENTANITA-3) !important;
@@ -678,7 +683,7 @@ div {
   margin-left: 5px;
   left: 0;
   width: 90px;
-  height: 460px;
+  height: 600px;
   background: var(--FF_ONE);
   z-index: 1000;
   padding: 10px;
@@ -714,6 +719,15 @@ div {
 
 .floating-menu.hidden {
   left: -90px;
+}
+
+table th {
+  color: white;
+  background-color: var(--FF_COLOR_OBJETOS-1);
+  font-weight: normal;
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
 }
 
 #widen-button {
@@ -802,6 +816,8 @@ div {
 .menu-u2,
 .menu-u3,
 .menu-u4,
+.menu-u5,
+.menu-u6,
 .menu-pdf,
 .menu-home,
 .menu-u0,
@@ -1915,6 +1931,10 @@ a.link-glossario:hover {
   body {
     margin-top: 0;
 }
+
+.text-area .text-item {
+  display: none;
+}
   .container {
     max-width: 650px;
   }
@@ -1964,6 +1984,8 @@ a.link-glossario:hover {
   .box-header {
     max-width: 580px;
 }
+
+
 
   .cover {
     background: url(../../assets/images/identity/bg-body-mob.png) top center;
