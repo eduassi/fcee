@@ -34,7 +34,7 @@ function send_approval_email($name, $email)
         <br>
         <br>Sua inscrição no curso <b>Educação Especial no contexto da educação básica: Aspectos teóricos e Metodológicos foi homologada</b>.
         <br>
-        <br>Informamos que o curso iniciará no dia 21/03/2022 e ocorrerá no período de 02 (dois) meses.
+        <br>Informamos que o curso iniciará no dia 28/04/2022 e ocorrerá no período de 02 (dois) meses.
         <br>
         <br>Na data de abertura, acesse o link: <a target='_blank' href='https://cursos.fcee-sc.net.br/'>https://cursos.fcee-sc.net.br/</a>
         <br>
