@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,600&display=swap');
 body {
   font-family: "Barlow", sans-serif;
   font-size: 1.2rem;
@@ -1384,8 +1385,9 @@ p.fonte {
   padding: 20px;
 }
 .dt-box p {
-  font-family: "Barlow Condensed", sans-serif !important;
-  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 600;
+  font-style: italic;
 }
 
 /* NORMATIZAÇÃO */
