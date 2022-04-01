@@ -25,7 +25,7 @@ ul {
   width: 162px;
   border: 3pt solid var(--FF_COLOR_OBJETOS-VENTANITA-3) !important;
   color: var(--FF_FONT_H) !important;
-  background: var(--FF_COLOR_OBJETOS-VENTANITA-2) !important;
+  background: unset !important;
 }
 
 .modulo_1 .ventanita-box-img {
@@ -1761,7 +1761,7 @@ a.link-glossario:hover {
 .modulo_1 .ventanita-show.active {
   border: 3pt solid var(--FF_COLOR_OBJETOS-VENTANITA-3) !important;
   color: var(--FF_FONT_H) !important;
-  background: var(--FF_COLOR_OBJETOS-VENTANITA-2) !important;
+  background: var(--FF_COLOR_OBJETOS-VENTANITA-1) !important;
 }
 .modulo_1 .ventanita-caract {
   background: var(--FF_COLOR_OBJETOS-VENTANITA-1) !important;
