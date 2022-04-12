@@ -21,6 +21,11 @@ body {
 .top-art div {
   width: 450px;
 }
+
+.color-red{
+color: var(--FF_THREE) !important;
+}
+
 .top-art div h1,
 .top-art div h4,
 .top-art div h5 {
