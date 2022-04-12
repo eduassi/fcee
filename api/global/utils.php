@@ -217,11 +217,20 @@ function copy_dir_recursively(
     closedir($directory);
 }
 
+function dir_is_empty($dirname)
+{
+    if (!is_dir($dirname)) return false;
+    foreach (scandir($dirname) as $file) {
+        if (!in_array($file, array('.', '..', '.svn', '.git'))) return false;
+    }
+    return true;
+}
+
 
 function zip_folder_and_download($source_folder, $destination_folder)
 {
     global $COURSE_ZIP_SUFIX_PATH;
-    
+
     $rootPath = realpath($source_folder);
 
     // Initialize archive object

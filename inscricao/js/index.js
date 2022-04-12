@@ -6,6 +6,8 @@ var TestaCPF = function (strCPF) {
   var Resto;
   Soma = 0;
   if (strCPF == "00000000000") return false;
+  if (strCPF == "000000000000") return false;
+  if (Number(strCPF) == 0) return false;
 
   for (i = 1; i <= 9; i++)
     Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
@@ -110,9 +112,7 @@ var set_button = function () {
           } else if (el.id == "cpf") {
             if (!TestaCPF(el.value)) {
               ready_to_send = false;
-              let cpf_error_message = $(el)
-                .parent()
-                .find("#email-error-message");
+              let cpf_error_message = $(el).parent().find("#cpf-error-message");
               if (!$(cpf_error_message).length) {
                 cpf_error_message = $.parseHTML(
                   "<span id='cpf-error-message' class='warning'>CPF inválido!</span>"
