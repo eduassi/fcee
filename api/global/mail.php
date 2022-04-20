@@ -52,3 +52,27 @@ function send_approval_email($name, $email)
     }
     return false;
 }
+
+
+function send_file_confirmation_email($name, $email)
+{
+    $subject = "[Não Responda] Confirmação de documentos [Não Responda]";
+    $message = "
+        <b>Olá, $name,</b>
+        <br>
+        <br>Precisamos de uma confirmação dos documentos usados para a inscrição no curso, para isso, acesse o link <a target='_blank' href='https://inscricao.fcee-sc.net.br/atualizacao-documentos/'>https://inscricao.fcee-sc.net.br/atualizacao-documentos/</a>, digite seu CPF e envie novamente sua documentação.
+        <br>
+        <br>Agradecemos a sua disposição.
+        <br>
+        <br>Equipe FCEE 
+    ";
+
+    $recipient = "no-reply@fcee-sc.net.br";
+
+    $email_headers = implode("\n", array("From: $recipient", "Reply-To: $recipient", "Return-Path: $recipient", "MIME-Version: 1.0", "X-Priority: 3", "Content-Type: text/html; charset=UTF-8"));
+    $mail_flow = mail($email, $subject, $message, $email_headers);
+    if ($mail_flow) {
+        return true;
+    }
+    return false;
+}

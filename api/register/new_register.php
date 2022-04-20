@@ -33,10 +33,11 @@ if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo",
     $doc_vinculo_ext = pathinfo($doc_vinculo["name"], PATHINFO_EXTENSION);
 
     if (
-        in_array($doc_foto_ext, $valid_extensions) && 
+        in_array($doc_foto_ext, $valid_extensions) &&
         in_array($doc_vinculo_ext, $valid_extensions) &&
         $doc_foto["size"] < $maximum_size &&
-        $doc_vinculo["size"] < $maximum_size
+        $doc_vinculo["size"] < $maximum_size &&
+        $_POST["cpf"]
     ) {
 
         $table_abstraction = new Register($db);
@@ -58,33 +59,43 @@ if (array_key_exists("doc-com-foto", $_FILES) && array_key_exists("doc-vinculo",
         $table_abstraction->documentoFoto = $doc_foto_ext;
         $table_abstraction->documentoVinculo = $doc_vinculo_ext;
 
-        $upload_path = '../../documents/' . $table_abstraction->getCPF() . '/';
 
         $db->beginTransaction();
+        $success_actions = false;
 
-        remove_dir_recursively($upload_path);
-        mkdir($upload_path, 0777, true);
 
+        $table_CPF = $table_abstraction->getCPF();
         $query_result = $table_abstraction->new_register();
 
-        if (
-            $query_result[0] &&
-            move_uploaded_file($doc_foto['tmp_name'], $upload_path . $PICTURE_DOCUMENT_NAME . "." . $doc_foto_ext) &&
-            move_uploaded_file($doc_vinculo['tmp_name'], $upload_path . $COMPROVATION_DOCUMENT_NAME . "." . $doc_vinculo_ext)
-            
-        ) {
+
+        if ($query_result && $table_CPF) {
+            $upload_path = '../../documents/' . $table_CPF . '/';
+
+            remove_dir_recursively($upload_path);
+            mkdir($upload_path, 0777, true);
+
+            if (
+                move_uploaded_file($doc_foto['tmp_name'], $upload_path . $PICTURE_DOCUMENT_NAME . "." . $doc_foto_ext) &&
+                move_uploaded_file($doc_vinculo['tmp_name'], $upload_path . $COMPROVATION_DOCUMENT_NAME . "." . $doc_vinculo_ext)
+            ) {
+                $success_actions = true;
+            }
+        }
+
+        if ($success_actions) {
             $db->commit();
             send_email($table_abstraction->getName(), $table_abstraction->getEmail());
 
-            $response = array("message" => getMessage($query_result[1]));
+            $response = array("message" => getMessage("genericSuccess"));
             http_response_code(201);
             echo json_encode($response, JSON_UNESCAPED_UNICODE);
         } else {
-            $response = array("message" => $query_result[1]);
+            $response = array("message" => getMessage("genericFailure"));
             http_response_code(503);
             echo json_encode($response, JSON_UNESCAPED_UNICODE);
         }
     } else {
+        $db->rollBack();
         $response = array("message" => "Arquivos com extensão não suportada.");
         http_response_code(503);
         echo json_encode($response, JSON_UNESCAPED_UNICODE);

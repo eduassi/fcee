@@ -90,7 +90,7 @@ class Register
             }
             if ($property != "email" && $property != "documentoFoto" && $property != "documentoVinculo") {
                 $this->$property = mb_convert_case($value, MB_CASE_UPPER, 'UTF-8');
-            }else{
+            } else {
                 $this->$property = $value;
             }
         }
@@ -129,6 +129,33 @@ class Register
         $query = "SELECT registro.id, registro.nome, cpf, rg, orgaoEmissor, sexo.nome AS sexo, estado.nome AS estado, matricula, email, ddd, telefone, curso, atuacao.nome AS atuacao, municipioReside, localAtuacao, instituicaoAtuacao, documentoFoto, documentoVinculo, dataRegistro FROM registro JOIN estado ON estado.id = registro.estado JOIN sexo ON sexo.id = registro.sexo JOIN atuacao ON registro.atuacao = atuacao.id WHERE homologado IS NULL ORDER BY dataRegistro ASC";
 
         $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
+    public function get_email_list()
+    {
+        $query = "SELECT nome, email, cpf FROM registro";
+
+        $stmt = $this->conn->prepare($query);
+
+        if ($stmt->execute()) {
+            return $stmt;
+        }
+
+        return false;
+    }
+
+    public function cpf_exists()
+    {
+        $query = "SELECT id FROM registro WHERE cpf = :cpf";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":cpf", $this->cpf);
 
         if ($stmt->execute()) {
             return $stmt;
@@ -228,7 +255,7 @@ class Register
         return false;
     }
 
-    
+
     public function update_all_approve_register()
     {
         // query to insert record
@@ -270,7 +297,7 @@ class Register
     {
         // query to insert record
         $query = "UPDATE registro SET 
-        documentoFoto = :documentoFoto, documentoVinculo = :documentoVinculo, homologado=0 WHERE id = :id
+        documentoFoto = :documentoFoto, documentoVinculo = :documentoVinculo, homologado=1, dataHomologado=current_timestamp() WHERE id = :id
      ";
 
 
@@ -278,6 +305,28 @@ class Register
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(":id", $this->id);
+        $stmt->bindParam(":documentoFoto", $this->documentoFoto);
+        $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function refreshExtensions()
+    {
+        // query to insert record
+        $query = "UPDATE registro SET 
+        documentoFoto = :documentoFoto, documentoVinculo = :documentoVinculo WHERE cpf = :cpf
+     ";
+
+
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":cpf", $this->cpf);
         $stmt->bindParam(":documentoFoto", $this->documentoFoto);
         $stmt->bindParam(":documentoVinculo", $this->documentoVinculo);
 

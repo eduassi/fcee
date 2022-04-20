@@ -51,6 +51,23 @@ var get_optional_attr = function (key) {
   return response;
 };
 
+var send_confirmation_email = function () {
+  $.ajax({
+    type: "GET",
+    url: api_base_url + "/admin/call_for_confirmation",
+    contentType: "application/json",
+    headers: {
+      Authorization: "Bearer " + stored_token,
+    },
+    success: function (data) {
+      console.log(data);
+    },
+    error: function (data) {
+      alert(data.responseJSON.message);
+    },
+  });
+};
+
 var startCountdown = function () {
   if (stored_token) {
     let exp_time = parseJwt(stored_token)["exp"] * 1000;
@@ -108,9 +125,11 @@ var TestaCPF = function (strCPF) {
   var Soma;
   var Resto;
   Soma = 0;
-  
-  if(strCPF.length != 11) return false;
+
+  if (strCPF.length != 11) return false;
   if (strCPF == "00000000000") return false;
+  if (strCPF == "000000000000") return false;
+  if (Number(strCPF) == 0) return false;
 
   for (i = 1; i <= 9; i++)
     Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
@@ -129,7 +148,6 @@ var TestaCPF = function (strCPF) {
   return true;
 };
 
-
 var formatDate = function (datetime) {
   let final_date;
   let new_date = new Date(datetime);
@@ -147,7 +165,6 @@ var formatDate = function (datetime) {
 
   return final_date;
 };
-
 
 var formatDateUS = function (datetime) {
   let final_date;

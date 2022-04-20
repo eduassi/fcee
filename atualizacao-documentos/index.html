@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <title>FCEE - Confirmação de Documentos</title>
+    <!-- FAVICON 1 -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/images/identity/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="assets/images/identity/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/images/identity/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="assets/images/identity/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/images/identity/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="assets/images/identity/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/images/identity/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets/images/identity/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/identity/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/images/identity/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/identity/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/images/identity/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/identity/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/images/identity/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/identity/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- ./ FAVICON -->
+
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="bg-color-3" id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 mx-auto row-flex">
+            <img
+              class="d-block mb-4 img-fluid mx-auto"
+              src="assets/images/marca-1.png"
+            />
+            <img
+              class="d-block mb-4 img-fluid mx-auto"
+              src="assets/images/marca-3.png"
+            />
+            <img
+              class="d-block mb-4 mx-auto img-fluid"
+              src="assets/images/marca-4.png"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <h1 class="title-1 mt-4">CONFIRMAÇÃO DE DOCUMENTOS</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-color-1" id="feedback-screen">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <h1 class="mb-5" style="text-align: center">Confirmação de documentos enviada!</h1>
+            <div style="display: flex; justify-content: center">
+              <img
+                class="img-fluid"
+                style="text-align: center"
+                src="assets/images/sent.png"
+              />
+            </div>
+            <p class="mt-5">
+              Para mais informações entre em contato com
+              <a href="mailto:fcee.edbasica@gmail.com"
+                >fcee.edbasica@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-color-1" id="register-screen">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <form id="register-form">
+              <legend>
+                Por favor, digite seu CPF e envie seus documentos para a confirmação:
+              </legend>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="disabledTextInput" class="form-label"
+                      >CPF</label
+                    >
+                    <input
+                      type="text"
+                      id="cpf"
+                      class="form-control"
+                      placeholder="Apenas números"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="disabledTextInput" class="form-label"
+                  >Documento com foto (frente e verso)</label
+                >
+                <input
+                  type="file"
+                  id="doc-com-foto"
+                  class="form-control"
+                  accept="application/pdf, image/png, image/jpg, image/jpeg"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="disabledTextInput" class="form-label"
+                  >Comprovação de "Atuação em Sala" ou "Segundo Professor"
+                  (anexar declaração da direção da escola)
+                </label>
+                <input
+                  type="file"
+                  id="doc-vinculo"
+                  class="form-control"
+                  accept="application/pdf, image/png, image/jpg, image/jpeg"
+                  placeholder=""
+                />
+              </div>
+            </form>
+            <button id="form-send" type="submit" class="btn btn-primary">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-color-1" id="uploading">
+      <div><img style="width: 100px" src="assets/images/uploading.png" /></div>
+      <p>Enviando formulário, aguarde alguns instantes</p>
+    </section>
+
+    <section class="bg-color-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <h2 class="mb-4">Contato:</h2>
+            <p data-aos="fade-up">Acesse nosso canal de atendimento:</p>
+            <p data-aos="fade-up">
+              E-mail:
+
+              <!-- <a href="mailto:contato@fcee-sc.net.br">contato@fcee-sc.net.br</a> -->
+              <a href="mailto:fcee.edbasica@gmail.com"
+                >fcee.edbasica@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
