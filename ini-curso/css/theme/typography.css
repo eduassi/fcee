@@ -1,0 +1,210 @@
+blockquote {
+    position: relative;
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;*/
+    padding-top: 60px;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin-bottom: 10px !important;
+    margin: 0 auto;
+    color: #706f6f;
+}
+
+@media (max-width: 576px) {
+    blockquote {
+        position: relative;
+        padding-top: 30px;
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-bottom: 10px !important;
+        margin: 0 auto;
+        color: #706f6f;
+    }
+    .modulo_1 blockquote:after {
+        margin-top: 50px;
+        background-image: url(../../assets/images/module_1/svg/citacao_inferior_m1.svg);
+    }
+    .progress-bar-container p {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .img-desktop img {
+        visibility: hidden;
+    }
+    .box-interno {
+        margin: 0;
+        padding: 0 1em !important;
+    }
+    .carousel {
+        padding: 10px !important;
+        border-radius: 10px !important;
+    }
+}
+
+blockquote:before,
+blockquote:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.quote-by {
+    color: var(--FF_FONT_H);
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+    display: block;
+    padding-right: 4em;
+    margin-bottom: 50px;
+}
+
+
+/* CORES MODULOS */
+
+.modulo_1 blockquote:before {
+    top: -5px;
+    background-image: url(../../assets/images/module_1/svg/citacao_superior_m1.svg);
+}
+
+.modulo_1 blockquote:after {
+    margin-top: 70px;
+    background-image: url(../../assets/images/module_1/svg/citacao_inferior_m1.svg);
+}
+
+.modulo_2 blockquote:before {
+    top: -5px;
+    background-image: url(../../assets/images/module_2/svg/citacao_superior_m2.svg);
+}
+
+.modulo_2 blockquote:after {
+    margin-top: 70px;
+    background-image: url(../../assets/images/module_2/svg/citacao_inferior_m2.svg);
+}
+
+.modulo_3 blockquote:before {
+    top: -5px;
+    background-image: url(../../assets/images/module_3/svg/citacao_superior_m3.svg);
+}
+
+.modulo_3 blockquote:after {
+    margin-top: 70px;
+    background-image: url(../../assets/images/module_3/svg/citacao_inferior_m3.svg);
+}
+
+.modulo_4 blockquote:before {
+    top: -5px;
+    background-image: url(../../assets/images/module_4/svg/citacao_superior_m4.svg);
+}
+
+.modulo_4 blockquote:after {
+    margin-top: 70px;
+    background-image: url(../../assets/images/module_4/svg/citacao_inferior_m4.svg);
+}
+
+.modulo_1,
+.modulo_2,
+.modulo_3,
+.modulo_4 {
+    color: var(--THEME_FONT_COLOR);
+}
+
+body,
+p,
+ul,
+ol {
+    
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    font-family: 'Livvic', sans-serif;
+}
+
+.modulo_1 p,
+.modulo_1 ul,
+.modulo_1 ol{
+    color: var(--THEME_FONT_COLOR);
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.15rem;
+}
+
+.modulo_1 h1,
+.modulo_1 h2,
+.modulo_1 h3,
+.modulo_1 h4,
+.modulo_1 h5{
+    color: var(--FF_FONT_H) !important;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+/* NOVO */
+
+/*  H1  */
+.modulo_1 h1{
+    width: 100%;
+    text-transform: normal;
+    font-weight: 800;
+    background-size: 100% 42%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-origin: padding-box;
+    font-size: 2.2rem;
+}
+
+
+/*  H2  Título unidade*/
+.modulo_1 h2{
+  font-size: 1.8rem;
+}
+
+/*  H2  */
+.modulo_1 h2{
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+/*  H3  */
+.modulo_1 h3 {
+    padding-left: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+
+/*  H4  */
+.modulo_1 h4 {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* NOVO */
+
+.modulo_1 h4 {
+    color: var(--FF_FONT_H);
+}
+
+.modulo_1 .card h5 {
+    color: white;
+}

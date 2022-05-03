@@ -12,7 +12,7 @@
 var links_JSON = {
   ".menu-do-topo": {
     ".inicie-o-curso": {
-      url: "#",
+      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=62",
       "new-tab": true,
     },
     ".apresentacao-do-curso": {
