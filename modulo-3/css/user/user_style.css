@@ -644,7 +644,7 @@ div {
 .hamburguer-button {
   position: fixed;
   display: flex;
-  background: rgba(217, 0, 89, 1);
+  background: var(--FF_ONE);
   color: white;
   padding: 15px;
   font-size: 28px;
