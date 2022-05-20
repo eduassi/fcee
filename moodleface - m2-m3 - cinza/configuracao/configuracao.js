@@ -39,32 +39,5 @@ var links_JSON = {
       placeholder: "Atividade Avaliativa",
       "new-tab": true, 
     }
-  },
-  ".modulo-2": {
-    "apresentacao": {
-      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=22",
-      placeholder: "Estudo do Conteúdo",
-    },
-    
-    "atividade": {
-      url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=27",
-      placeholder: "Atividade Avaliativa",
-      "new-tab": true,  
-    }
-  },
-  ".modulo-3": {
-    "apresentacao": {
-      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=23",
-      placeholder: "Estudo do Conteúdo",
-    },
-   
-    "atividade": {
-      url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=26",
-      placeholder: "Atividade Avaliativa",
-      "new-tab": true, 
-    }
-  },
-  ".modulo-4": {
-    
   }
 };
