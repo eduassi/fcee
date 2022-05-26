@@ -22,6 +22,12 @@ ul {
   justify-content: center;
 }
 
+.modulo_1 .card-body h3 {
+  color: var(--FF_THREE) !important;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 
 
 .ilustra {
