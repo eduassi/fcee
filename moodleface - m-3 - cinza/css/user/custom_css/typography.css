@@ -1,0 +1,250 @@
+blockquote {
+  position: relative;
+  padding-top: 60px;
+  padding-left: 4em;
+  padding-right: 4em;
+  margin-bottom: 10px !important;
+  margin: 0 auto;
+  color: #706f6f;
+}
+
+@media (max-width: 576px) {
+  blockquote {
+    position: relative;
+    padding-top: 30px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 10px !important;
+    margin: 0 auto;
+    color: #706f6f;
+  }
+
+  .modulo_1 blockquote:after {
+    margin-top: 50px;
+    background-image: url(../../../assets/images/module_1/svg/citacao_inferior_m1.svg);
+  }
+
+  .progress-bar-container p {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .img-desktop img {
+    visibility: hidden;
+  }
+
+  .box-interno {
+    margin: 0;
+    padding: 0 1em !important;
+  }
+
+  .carousel {
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+}
+
+blockquote:before,
+blockquote:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.quote-by {
+  color: #84775c;
+  text-align: right;
+  font-size: 13px;
+  font-style: italic;
+  display: block;
+  padding-right: 4em;
+  margin-bottom: 50px;
+}
+
+/* CORES MODULOS */
+
+.modulo_1 blockquote:before {
+  top: -5px;
+  background-image: url(../../../assets/images/module_1/svg/citacao_superior_m1.svg);
+}
+
+.modulo_1 blockquote:after {
+  margin-top: 70px;
+  background-image: url(../../../assets/images/module_1/svg/citacao_inferior_m1.svg);
+}
+
+.modulo_2 blockquote:before {
+  top: -5px;
+  background-image: url(../../../assets/images/module_2/svg/citacao_superior_m2.svg);
+}
+
+.modulo_2 blockquote:after {
+  margin-top: 70px;
+  background-image: url(../../../assets/images/module_2/svg/citacao_inferior_m2.svg);
+}
+
+.modulo_3 blockquote:before {
+  top: -5px;
+  background-image: url(../../../assets/images/module_3/svg/citacao_superior_m3.svg);
+}
+
+.modulo_3 blockquote:after {
+  margin-top: 70px;
+  background-image: url(../../../assets/images/module_3/svg/citacao_inferior_m3.svg);
+}
+
+.modulo_4 blockquote:before {
+  top: -5px;
+  background-image: url(../../../assets/images/module_4/svg/citacao_superior_m4.svg);
+}
+
+.modulo_4 blockquote:after {
+  margin-top: 70px;
+  background-image: url(../../../assets/images/module_4/svg/citacao_inferior_m4.svg);
+}
+
+.modulo_1,
+.modulo_2,
+.modulo_3,
+.modulo_4 {
+  color: var(--DNIT_COLOR_MODULE_ONE_STRONG);
+}
+
+body,
+p,
+ul,
+ol {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Open Sans', sans-serif; 
+}
+
+figcaption {
+  font-size: 14px;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modulo_1 p,
+.modulo_1 ul,
+.modulo_1 ol,
+.modulo_2 p,
+.modulo_2 ul,
+.modulo_2 ol,
+.modulo_3 p,
+.modulo_3 ul,
+.modulo_3 ol,
+.modulo_4 p,
+.modulo_4 ul,
+.modulo_4 ol {  
+  color: var(--PRF_FONT_COLOR);
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.modulo_1 h1,
+.modulo_1 h2,
+.modulo_1 h3,
+.modulo_1 h4,
+.modulo_1 h5,
+.modulo_2 h1,
+.modulo_2 h2,
+.modulo_2 h3,
+.modulo_2 h4,
+.modulo_2 h5,
+.modulo_3 h1,
+.modulo_3 h2,
+.modulo_3 h3,
+.modulo_3 h4,
+.modulo_3 h5,
+.modulo_4 h1,
+.modulo_4 h2,
+.modulo_4 h3,
+.modulo_4 h4,
+.modulo_4 h5 {
+  margin-bottom: 35px;
+  color: var(--DNIT_COLOR_MODULE_ONE_STRONG);
+}
+
+
+.modulo_1 h1,
+.modulo_2 h1,
+.modulo_3 h1,
+.modulo_4 h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.modulo_1 h2,
+.modulo_2 h2,
+.modulo_3 h2,
+.modulo_4 h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+.modulo_1 h3,
+.modulo_2 h3,
+.modulo_3 h3,
+.modulo_4 h3 {
+  font-weight: 600;
+  font-size: 23px;
+}
+
+
+.modulo_1 h4,
+.modulo_2 h4,
+.modulo_3 h4,
+.modulo_4 h4 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+h5.title{ 
+  background-position: 100% 100%;
+  background-size: 100% 2px ;
+  background-repeat: no-repeat;
+  padding-bottom: 4px;
+  color: var(--PRF_FONT_COLOR);
+  text-align: left !important;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left !important;  
+}
+p.title{
+  
+}
+p.title-min{
+  font-size: 13px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+p.fonte-min{
+  margin-top: 0;
+  font-size: 12px;
+  word-wrap: break-word
+}
+
+p.fonte{
+  margin-top: 10px;
+  font-size: 14px !important;
+  text-align: left !important; 
+  word-wrap: break-word
+}
+
