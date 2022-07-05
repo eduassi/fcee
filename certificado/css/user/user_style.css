@@ -197,20 +197,20 @@ table td {
   background: var(--FF_FOUR);
 }
 .bg-color-3 {
-  background: #f3f4d7;
+  background: #9fa707;
 }
 .bg-color-4 {
-  background: #f3f4d7;
+  background: #686201;
 }
 .bg-color-5 {
   background: var(--FF_FIVE);  
 }
 
 a {
-  color: var(--COLOR-FONT);
+  color: #828901 !important;
 }
 a:hover {
-  color: var(--COLOR-FONT);
+  color: #706b02 !important;
 }
 
 .modulo_1 ul.menu-text li a {
@@ -243,6 +243,21 @@ a:hover {
 
 button {
   background: url(../../assets/images/incricao.png); 
+  width: 287px;
+  height: 121px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+button.certificado {
+  background: url(../../assets/images/btn-certificado.png); 
   width: 287px;
   height: 121px;
   border: none;
