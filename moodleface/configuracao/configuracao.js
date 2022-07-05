@@ -25,46 +25,47 @@ var links_JSON = {
     },
     ".forum-apresentacao": {
       url: "https://cursos.fcee-sc.net.br/mod/forum/view.php?id=11",
-      "new-tab": true,      
-    }
+      "new-tab": true,
+    },
+    ".module-4": {
+      url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=64",
+      "new-tab": true,
+    },
   },
   ".modulo-1": {
-    "apresentacao": {
+    apresentacao: {
       url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=13",
-      placeholder: "Estudo do Conteúdo",      
+      placeholder: "Estudo do Conteúdo",
     },
-    
-    "atividade": {
+
+    atividade: {
       url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=15",
       placeholder: "Atividade Avaliativa",
-      "new-tab": true, 
-    }
+      "new-tab": true,
+    },
   },
   ".modulo-2": {
-    "apresentacao": {
+    apresentacao: {
       url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=22",
       placeholder: "Estudo do Conteúdo",
     },
-    
-    "atividade": {
+
+    atividade: {
       url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=27",
       placeholder: "Atividade Avaliativa",
-      "new-tab": true,  
-    }
+      "new-tab": true,
+    },
   },
   ".modulo-3": {
-    "apresentacao": {
+    apresentacao: {
       url: "https://cursos.fcee-sc.net.br/mod/resource/view.php?id=23",
       placeholder: "Estudo do Conteúdo",
     },
-   
-    "atividade": {
+
+    atividade: {
       url: "https://cursos.fcee-sc.net.br/mod/quiz/view.php?id=26",
       placeholder: "Atividade Avaliativa",
-      "new-tab": true, 
-    }
-  },
-  ".modulo-4": {
-    
+      "new-tab": true,
+    },
   }
 };
