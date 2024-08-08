@@ -113,7 +113,7 @@ class Register
 
     public function get_accepted_registers_to_csv()
     {
-        $query = "SELECT REPLACE(REPLACE(cpf, '.', ''), '-', '') AS username, LEFT(nome,  POSITION(' ' IN nome)-1) AS firstname,  TRIM(RIGHT(nome, LENGTH(nome) - POSITION(' ' IN nome))) AS lastname, email AS email, cpf AS profile_field_CPF FROM registro WHERE homologado='1'";
+        $query = "SELECT REPLACE(REPLACE(cpf, '.', ''), '-', '') AS username, UPPER(TRIM(LEFT(nome,  POSITION(' ' IN nome)-1))) AS firstname,  UPPER(TRIM(REPLACE(nome, TRIM(LEFT(nome,  POSITION(' ' IN nome)-1)), ''))) AS lastname, email AS email, cpf AS profile_field_CPF FROM registro WHERE homologado='1'";
 
         $stmt = $this->conn->prepare($query);
 
@@ -139,7 +139,7 @@ class Register
 
     public function get_email_list()
     {
-        $query = "SELECT nome, email, cpf FROM registro";
+        $query = "SELECT nome, email, cpf FROM registro WHERE homologado IS NULL OR homologado = '0'";
 
         $stmt = $this->conn->prepare($query);
 
